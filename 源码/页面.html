@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c22">
+  <meta name="description" content="未名岛。一间可以专注、写字、听雨的离线小屋。">
+  <title>未名岛 · 给自己一点时间</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="scene.js"></script>
+  <script defer src="audio.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-island" viewBox="0 0 40 40"><path d="m4 28 16-9 16 9-16 9Z"/><path d="M20 5v19m-7-7 7-12 7 12Zm-4 7 11-15 11 15Z"/><path d="m5 32 15 6 15-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16M8 4v6m8 4v6"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4Zm12-1a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2 8M4 4v6h6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-rain" viewBox="0 0 24 24"><path d="M6 15a5 5 0 1 1 1-10 6 6 0 0 1 11 3 4 4 0 0 1 0 8M7 18l-1 3m6-4-1 3m6-2-1 3"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 4l3 3 3-3M9 20l3-3 3 3M4 10l4-1-1-4m10 14-1-4 4-1M4 14l4 1-1 4m10-14-1 4 4 1"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20C2 9 10 3 21 3c0 11-6 19-16 17Zm0 0L17 7"/></symbol>
+    <symbol id="i-write" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l5-1L21 7a2.8 2.8 0 0 0-4-4L5 15Zm0 0 1-5 4 4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+  </svg>
+  <div class="page-grain" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <a class="brand" href="#" data-view="home" aria-label="未名岛首页">
+      <span class="brand-mark"><svg><use href="#i-island"/></svg></span>
+      <span id="island-name">未名岛</span><span class="brand-en">AN ISLAND OF YOUR OWN</span>
+    </a>
+    <nav class="main-nav" aria-label="主要导航">
+      <button class="nav-link active" data-view="home" aria-current="page">岛上</button>
+      <button class="nav-link" data-view="journal">手记</button>
+      <button class="nav-link" data-view="tools">工具箱</button>
+    </nav>
+    <div class="header-right"><span class="local-badge"><span></span> 只在此地</span><button class="icon-button" id="settings-open" aria-label="岛屿设置" title="岛屿设置"><svg><use href="#i-settings"/></svg></button></div>
+  </header>
+
+  <main id="main">
+    <section id="view-home" class="view home-view" aria-label="岛上">
+      <div class="day-line"><span id="current-date">今天</span><span class="line-stretch"></span><span id="greeting">慢一点，也没关系。</span></div>
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-line"></span>A LITTLE TIME, ALL YOURS</p>
+          <h1>世界很大。<br>先照顾<span class="ink-accent">这一小块。</span></h1>
+          <p class="hero-description">让心安静下来，做一件你在意的小事。</p>
+          <div class="timer" aria-label="专注计时器">
+            <div class="timer-tabs" role="group" aria-label="计时模式"><button id="timer-work" class="active" aria-pressed="true">专注一会儿</button><span>/</span><button id="timer-break" aria-pressed="false">歇一会儿</button></div>
+            <div class="timer-digits" id="timer-display" role="timer" aria-label="剩余时间">25:00</div>
+            <div class="timer-meta"><span id="timer-label">把这段时间，留给一件事</span><div id="timer-presets" class="presets" role="group" aria-label="专注时长"><button class="active" data-minutes="25" aria-label="25 分钟">25</button><button data-minutes="45" aria-label="45 分钟">45</button><button data-minutes="60" aria-label="60 分钟">60<span> 分</span></button></div></div>
+            <div class="timer-actions"><button class="primary-button" id="timer-toggle">开始专注<svg><use href="#i-arrow"/></svg></button><button class="icon-button reset-button" id="timer-reset" aria-label="重置计时器" title="重新开始"><svg><use href="#i-reset"/></svg></button><button class="text-button focus-button" id="focus-toggle" aria-pressed="false"><svg><use href="#i-expand"/></svg>沉浸</button></div>
+            <p class="timer-notice" id="timer-notice">每完成一次专注，岛上就多一份生机。</p>
+          </div>
+        </div>
+
+        <figure class="scene" id="island-scene">
+          <div class="scene-topline"><span><i></i>ISLAND No. 001</span><button id="time-toggle" class="scene-time" title="切换到黎明" aria-label="切换到黎明">夜色正好<svg><use href="#i-sun"/></svg></button></div>
+          <div class="scene-coordinate coordinate-a" aria-hidden="true">＋</div><div class="scene-coordinate coordinate-b" aria-hidden="true">＋</div>
+          <canvas id="island-canvas" role="img" aria-label="一座悬浮在星空里的森林小岛，温暖的小屋亮着灯。可以切换天气，专注完成后小岛会逐渐生长。"></canvas>
+          <figcaption class="scene-caption"><span class="caption-rule"></span>不必去很远，也能有自己的岛。</figcaption>
+          <div class="scene-bottomline"><div id="weather-controls" class="weather-controls" role="group" aria-label="岛上天气"><button class="active" data-weather="clear" aria-pressed="true"><svg><use href="#i-sun"/></svg>晴夜</button><button data-weather="rain" aria-pressed="false"><svg><use href="#i-rain"/></svg>听雨</button><button data-weather="snow" aria-pressed="false"><svg><use href="#i-snow"/></svg>看雪</button></div><button class="sound-toggle" id="sound-toggle" aria-expanded="false" aria-controls="sound-panel"><svg><use href="#i-sound"/></svg><span>岛上的声音</span></button></div>
+          <div id="sound-panel" class="sound-panel" hidden><div class="sound-title">给安静一点声音<span>合成环境音 · 无需联网</span></div><div class="sound-options"><button data-sound="rain" aria-pressed="false">雨落林间</button><button data-sound="fire" aria-pressed="false">炉火微响</button><button data-sound="wind" aria-pressed="false">风过山谷</button></div><label class="volume-label" for="sound-volume">音量<input id="sound-volume" type="range" min="0" max="100" value="35" aria-label="环境音音量"></label></div>
+        </figure>
+      </div>
+
+      <div class="daily-grid">
+        <section class="daily-card task-card" aria-labelledby="task-heading"><div class="card-heading"><h2 id="task-heading"><span class="card-index">01</span>眼前的小事</h2><span class="count-pill" id="task-count">0 件</span></div><div class="tasks-body"><p id="task-empty" class="empty-note">不用装满一天。<br><span>先写下最想完成的那一件。</span></p><ul id="task-list" aria-label="待办事项"></ul></div><form id="task-form" class="task-form"><span aria-hidden="true">＋</span><input id="task-input" maxlength="160" placeholder="下一件小事……" aria-label="添加待办事项" autocomplete="off"><button type="submit" aria-label="添加事项" title="添加事项"><svg><use href="#i-arrow"/></svg></button></form></section>
+        <section class="daily-card note-card" aria-labelledby="note-heading"><div class="card-heading"><h2 id="note-heading"><span class="card-index">02</span>留一句给今天</h2><svg class="muted-icon"><use href="#i-write"/></svg></div><button id="journal-preview" class="journal-preview" data-view="journal">有什么念头，先放在这里。<br>不用写得很好，写下来就好。</button><button class="card-link" data-view="journal">翻开手记<svg><use href="#i-arrow"/></svg></button><span class="note-decoration" aria-hidden="true">“</span></section>
+        <section class="daily-card stats-card" aria-labelledby="stats-heading"><div class="card-heading"><h2 id="stats-heading"><span class="card-index">03</span>时间留下的痕迹</h2><svg class="muted-icon"><use href="#i-leaf"/></svg></div><div class="stat-main"><span id="stat-minutes">0</span><span class="stat-unit">分钟<span>今天的专注</span></span></div><div class="week-chart" id="week-chart" role="img" aria-label="最近七天的专注时长"></div><div class="stats-bottom"><span>累计 <b id="stat-sessions">0</b> 次专注</span><span>连续 <b id="stat-streak">0</b> 天</span></div></section>
+      </div>
+      <div class="focus-exit-hint">空格 暂停 / 继续<span>·</span>Esc 回到岛上</div>
+    </section>
+
+    <section id="view-journal" class="view journal-view" hidden aria-label="手记">
+      <div class="section-intro"><div><p class="eyebrow">NOT EVERYTHING NEEDS A TITLE</p><h1>写下来，<span class="ink-accent">就有了回声。</span></h1><p>乱七八糟也好，只言片语也好。这里都放得下。</p></div><button id="journal-export" class="outline-button"><svg><use href="#i-download"/></svg>导出手记</button></div>
+      <div class="journal-layout"><div class="journal-paper"><div class="paper-heading"><div class="journal-day-switch"><button id="journal-prev" class="icon-button" aria-label="前一天">←</button><label for="journal-date" class="sr-only">手记日期</label><input id="journal-date" type="date"><button id="journal-next" class="icon-button" aria-label="后一天">→</button></div><span id="journal-status" role="status">落笔即保存</span></div><label for="journal-input" class="sr-only">今天的手记</label><textarea id="journal-input" placeholder="今天，有什么想留住的？&#10;&#10;可以是一件小事，一段没想明白的话，&#10;或者只是一句：今天也过完了。" spellcheck="false"></textarea><div class="paper-bottom"><span>只存在你的浏览器里</span><svg><use href="#i-leaf"/></svg></div></div><aside class="journal-aside"><span class="aside-mark">一页一日</span><h2>很小的日子，<br>也值得被记得。</h2><p>不必每天都有收获。<br>有时，记录本身就是收获。</p><div class="journal-activity"><p class="mini-label">近 35 天 · 专注的足迹</p><div id="heatmap" class="heatmap" role="img" aria-label="近 35 天的专注记录"></div><p class="heatmap-legend"><span>少</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><span>多</span></p></div><button class="text-button" id="breathe-open" data-dialog="breathe-dialog">有点累？一起呼吸一分钟 <span>↗</span></button></aside></div>
+    </section>
+
+    <section id="view-tools" class="view tools-view" hidden aria-label="工具箱">
+      <div class="section-intro"><div><p class="eyebrow">SMALL TOOLS, LESS FRICTION</p><h1>顺手的工具。<br><span class="ink-accent">省一点折腾。</span></h1><p>处理几个小问题，然后继续做你的事。</p></div><span class="tools-offline"><span></span>全部在本机处理</span></div>
+      <div class="tools-workbench"><div class="tools-toolbar"><label for="tool-select">我想处理</label><select id="tool-select"><option value="text">文字统计</option><option value="json">JSON 整理</option><option value="base64">Base64 编解码</option><option value="url">URL 编解码</option><option value="choose">帮我选一个</option></select><span id="tool-hint">粘贴文字，看看字数与阅读时间。</span></div><div class="tools-editors"><div class="tool-input-wrap"><label for="tool-input"><span>INPUT</span>放在这里</label><textarea id="tool-input" spellcheck="false" placeholder="粘贴或输入内容……" aria-label="工具输入"></textarea></div><div class="tool-output-wrap"><div class="output-label"><label for="tool-output"><span>OUTPUT</span>处理结果</label><button id="copy-output" class="text-button">复制结果</button></div><pre id="tool-output" tabindex="0" aria-label="工具输出" aria-live="polite">等你放点东西进来。</pre></div></div><div class="tools-actions"><p>不上传，不调用接口。</p><button class="outline-button" id="tool-secondary">清空</button><button class="primary-button" id="tool-primary">统计文字 <span>↗</span></button></div></div>
+      <p class="tools-footnote">一个普通的新建文件夹，也可以有一点自己的用处。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>未名岛 <span class="footer-dot">·</span> 一小块属于你的时间</span><div><span id="storage-status"><i></i>本地保存</span><button id="about-open" data-dialog="about-dialog">关于这座岛 <span>↗</span></button></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <dialog id="settings-dialog" class="island-dialog"><div class="dialog-top"><p class="eyebrow">MAKE YOURSELF AT HOME</p><button class="icon-button" data-close aria-label="关闭设置"><svg><use href="#i-close"/></svg></button></div><h2>这是你的岛。</h2><p class="dialog-description">改个名字，调好步调。然后慢慢来。</p><form id="settings-form"><label class="field-label" for="settings-name">岛屿名字</label><input id="settings-name" class="field" maxlength="16" placeholder="未名岛" required><label class="field-label" for="settings-duration">每次专注的时间 <span>5 — 120 分钟</span></label><input id="settings-duration" class="field" type="number" min="5" max="120" step="1" required value="25"><label class="checkbox-field"><input id="settings-motion" type="checkbox"><span>减少动态效果</span></label><button class="primary-button full-width" id="settings-save" type="submit">就这样，挺好 <svg><use href="#i-arrow"/></svg></button></form><div class="backup-area"><h3>把这些日常，好好收起来。</h3><p>数据跟随当前浏览器。换浏览器、移动入口文件或清理数据前，记得先导出备份。</p><div class="backup-actions"><button id="data-export" class="outline-button">导出备份</button><button id="data-import" class="outline-button">恢复备份</button><input id="data-file" type="file" accept="application/json,.json" hidden></div><button id="data-reset" class="danger-link">清空岛上的记录</button></div></dialog>
+
+  <dialog id="about-dialog" class="island-dialog about-dialog"><div class="dialog-top"><p class="eyebrow">A FOLDER, WITH A LITTLE LIFE IN IT</p><button class="icon-button" data-close aria-label="关闭关于"><svg><use href="#i-close"/></svg></button></div><svg class="about-logo"><use href="#i-island"/></svg><h2>名字还没想好，<br>日子可以先过起来。</h2><p>这个文件夹原本叫“新建文件夹”。<br>现在，它有了一座岛，一盏灯，<br>和几个能帮上小忙的东西。</p><p>不需要账号，也不需要网络。<br>你写下的字、勾掉的小事、认真度过的时间，<br>都留在你自己的浏览器里。</p><p class="about-note">愿你每次打开它，都能找回一点自己的节奏。</p><div class="about-version">未名岛 / v1.0 <span>2026.10.17</span></div></dialog>
+
+  <dialog id="breathe-dialog" class="island-dialog breathe-dialog"><div class="dialog-top"><p class="eyebrow">JUST ONE QUIET MINUTE</p><button class="icon-button" data-close aria-label="结束呼吸练习"><svg><use href="#i-close"/></svg></button></div><h2>先放下手里的事。</h2><p class="dialog-description">跟着光圈，慢慢呼吸。不必刻意用力。</p><div id="breath-orb" class="breath-orb"><span id="breath-label">吸气</span></div><p class="breath-guide">吸气 4 秒 · 停留 4 秒 · 呼气 6 秒</p></dialog>
+  <dialog id="recovery-dialog" class="island-dialog"><div class="dialog-top"><p class="eyebrow">SOME THINGS ARE STILL HERE</p><button class="icon-button" data-close aria-label="关闭版本恢复"><svg><use href="#i-close"/></svg></button></div><h2>还有一些旧日常。</h2><p class="dialog-description">导入之前、手记出现不同版本时，岛会尽量留住一份。可以先导出看看，再决定是否恢复。</p><div id="recovery-list" class="recovery-list"></div></dialog>
+  <noscript><div class="noscript-note">这座岛需要浏览器启用 JavaScript。请在 Edge、Chrome 或 Tabbit 中打开这个文件。</div></noscript>
+</body>
+</html>

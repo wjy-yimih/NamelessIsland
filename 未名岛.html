@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c22">
+  <meta name="description" content="未名岛。一间可以专注、写字、听雨的离线小屋。">
+  <title>未名岛 · 给自己一点时间</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2218%22%20fill%3D%22%2314262b%22%2F%3E%3Cpath%20d%3D%22m9%2043%2023-12%2023%2012-23%2014Z%22%20fill%3D%22%23395e51%22%2F%3E%3Cpath%20d%3D%22m32%209-14%2022h9l-12%209h34l-12-9h9Z%22%20fill%3D%22%23a4bfa0%22%2F%3E%3Cpath%20d%3D%22M32%2035v12%22%20stroke%3D%22%23d8a566%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E%0A" type="image/svg+xml">
+  <style>
+@charset "UTF-8";
+:root{color-scheme:dark;--bg:#101c22;--panel:#15232a;--panel2:#192930;--line:rgba(185,209,203,.13);--line-strong:rgba(185,209,203,.23);--text:#e5e8df;--muted:#90a5a6;--faint:#658183;--green:#afc5a1;--amber:#dcb879;--serif:"Noto Serif SC","Source Han Serif SC","STSong","SimSun",serif;--sans:"Microsoft YaHei UI","Microsoft YaHei","PingFang SC",sans-serif;--mono:"Cascadia Code","Consolas",monospace}
+*{box-sizing:border-box}html{min-height:100%;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.7;-webkit-font-smoothing:antialiased;min-width:320px}body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 76% 26%,#223b3b50,transparent 56%),radial-gradient(ellipse at 5% 94%,#293b3430,transparent 47%);pointer-events:none;z-index:-1}button,input,textarea,select{font:inherit}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer;background:none;border:0;color:inherit}button{transition:color .2s,background .2s,border-color .2s,transform .2s}button:disabled{opacity:.4;cursor:not-allowed}button:not(:disabled):active{transform:translateY(1px)}a{color:inherit;text-decoration:none}svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,pre:focus-visible{outline:2px solid var(--amber);outline-offset:5px}input,textarea,select{color:var(--text)}[hidden]{display:none!important}::selection{background:#a6bd9660;color:#fff}.svg-library{position:absolute;width:0;height:0;overflow:hidden}.page-grain{position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.94' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.65' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:fixed;top:-100px;left:20px;padding:10px 20px;background:var(--green);color:var(--bg);z-index:100}.skip-link:focus{top:10px}
+.site-header{height:92px;max-width:1552px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 56px;gap:24px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}.brand-mark{width:38px;height:42px;display:grid;place-items:center;color:var(--green)}.brand-mark svg{width:36px;height:36px;stroke-width:1.3}.brand #island-name{font-family:var(--serif);font-size:25px;letter-spacing:4px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.brand-en{font-family:var(--mono);font-size:9px;letter-spacing:1.4px;color:var(--faint);margin-left:7px;max-width:100px;line-height:1.65}.main-nav{display:flex;align-self:stretch;gap:33px;align-items:stretch;margin-left:60px}.nav-link{position:relative;padding:0 7px;font-size:13px;letter-spacing:2px;color:var(--muted)}.nav-link:hover,.nav-link.active,.nav-link[aria-current="page"]{color:var(--text)}.nav-link.active::after,.nav-link[aria-current="page"]::after{content:"";height:2px;width:18px;background:var(--green);position:absolute;bottom:0;left:50%;transform:translateX(-50%)}.header-right{display:flex;align-items:center;gap:24px}.local-badge{font-size:11px;letter-spacing:1px;color:var(--muted);white-space:nowrap}.local-badge>span,.tools-offline>span{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-right:7px;box-shadow:0 0 9px #afc5a130}.icon-button{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--muted);border-radius:50%}.icon-button:hover{color:var(--text);background:#b7cec410}.icon-button svg{width:19px;height:19px}main{max-width:1440px;padding:0 48px;margin:auto}.view{animation:arrive .5s ease both}.day-line{display:flex;align-items:center;gap:19px;font-size:11px;color:var(--muted);letter-spacing:1px;padding-top:27px}.line-stretch{height:1px;width:38px;background:var(--line-strong)}#greeting{color:var(--faint)}.hero{display:grid;grid-template-columns:370px minmax(0,1fr);position:relative;min-height:501px;gap:12px}.hero-copy{position:relative;padding-top:34px;z-index:2}.eyebrow{font-family:var(--mono);letter-spacing:2.1px;font-size:9px;line-height:1.6;color:var(--muted);margin:0 0 20px;display:flex;align-items:center;gap:12px}.tiny-line{width:22px;height:1px;background:var(--green);opacity:.7}h1,h2,h3,p{margin-top:0}h1{font-family:var(--serif);font-weight:400;font-size:43px;line-height:1.5;letter-spacing:2px;margin-bottom:15px}.ink-accent{color:var(--green)}.hero-description{font-size:12px;color:var(--muted);letter-spacing:.5px;margin-bottom:28px}.timer{max-width:332px}.timer-tabs{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:1px}.timer-tabs>span{color:#42585b;font-size:10px}.timer-tabs button{color:var(--faint);padding:0}.timer-tabs button.active,.timer-tabs button[aria-pressed="true"]{color:var(--green)}.timer-digits{font-family:var(--mono);font-size:76px;font-weight:300;font-variant-numeric:tabular-nums;letter-spacing:-4px;line-height:1.25;margin:7px 0 0;color:#e8ece4;text-shadow:0 0 35px #afc5a10d}.timer-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 20px}.timer-meta>span{font-size:10px;color:var(--faint);letter-spacing:.25px}.presets{display:flex;align-items:center;gap:7px}.presets button{font-family:var(--mono);font-size:10px;color:var(--faint);padding:1px 4px;border-bottom:1px solid transparent}.presets button.active,.presets button[aria-pressed="true"]{color:var(--green);border-color:#afc5a166}.presets span{font-family:var(--sans);font-size:9px}.timer-actions{display:flex;align-items:center;gap:10px}.primary-button{background:var(--green);color:#18292a;min-height:44px;padding:10px 22px;display:inline-flex;align-items:center;justify-content:center;gap:38px;font-size:12px;letter-spacing:1px;border:1px solid var(--green);border-radius:3px}.primary-button svg{width:18px;height:18px}.primary-button:hover{background:#bfd2b2;border-color:#bfd2b2;box-shadow:0 4px 24px #afc5a10c}.timer-actions>.primary-button{min-width:196px}.reset-button{border:1px solid var(--line);width:38px;height:38px}.text-button{font-size:11px;color:var(--muted);display:inline-flex;align-items:center;gap:7px;padding:5px 0}.text-button:hover{color:var(--green)}.text-button svg{width:15px;height:15px}.focus-button{margin-left:3px;white-space:nowrap}.focus-button svg{width:13px;height:13px}.timer-notice{font-size:10px;color:var(--faint);margin:13px 0 0;letter-spacing:.4px}
+.scene{position:relative;margin:0;min-width:0;min-height:495px;align-self:stretch;isolation:isolate}.scene::before{content:"";position:absolute;inset:12% -5% 0;background:radial-gradient(ellipse at 50% 52%,#456c5c1a,transparent 60%);z-index:-1}.scene-topline,.scene-bottomline{position:absolute;left:32px;right:5px;display:flex;align-items:center;justify-content:space-between;z-index:2}.scene-topline{top:18px}.scene-topline>span{font-family:var(--mono);font-size:9px;letter-spacing:1.8px;color:var(--faint);display:flex;align-items:center;gap:9px}.scene-topline i{display:inline-block;width:5px;height:5px;border:1px solid var(--faint);border-radius:50%}.scene-time{font-size:10px;letter-spacing:1px;color:var(--muted);display:flex;align-items:center;gap:8px;padding:5px}.scene-time svg{width:13px;height:13px}.scene-time:hover{color:var(--amber)}#island-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;touch-action:pan-y}.scene-coordinate{position:absolute;color:#627d784d;font-family:var(--mono);font-size:19px;pointer-events:none}.coordinate-a{top:72px;left:18px}.coordinate-b{bottom:100px;right:5px}.scene-caption{position:absolute;bottom:80px;right:26px;display:flex;align-items:center;gap:10px;font-size:10px;color:#8eaaa0;letter-spacing:1px;pointer-events:none}.caption-rule{height:1px;width:28px;background:#8eaaa044}.scene-bottomline{bottom:25px;left:35px;right:8px}.weather-controls{display:flex;gap:5px}.weather-controls button{display:flex;align-items:center;gap:6px;font-size:10px;padding:7px 10px;border:1px solid transparent;color:var(--faint);border-radius:3px}.weather-controls svg{width:13px;height:13px;stroke-width:1.3}.weather-controls button:hover{color:var(--text)}.weather-controls button.active,.weather-controls button[aria-pressed="true"]{background:#b4ccb60a;border-color:#a8c4b51e;color:var(--green)}.sound-toggle{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.5px;color:var(--muted);padding:7px 0 7px 7px}.sound-toggle svg{width:15px;height:15px}.sound-toggle[aria-expanded="true"],.sound-toggle:hover{color:var(--green)}.sound-panel{position:absolute;right:4px;bottom:72px;width:300px;border:1px solid var(--line-strong);background:#1a2b30f5;backdrop-filter:blur(16px);border-radius:6px;padding:20px;z-index:5;box-shadow:0 14px 50px #0005;animation:arrive .2s ease}.sound-title{font-family:var(--serif);font-size:16px;margin-bottom:17px}.sound-title>span{display:block;font-family:var(--sans);font-size:9px;color:var(--faint);margin-top:4px;letter-spacing:.5px}.sound-options{display:flex;gap:6px}.sound-options button{font-size:10px;padding:7px 9px;border:1px solid var(--line);border-radius:3px;color:var(--muted)}.sound-options button[aria-pressed="true"],.sound-options button.active{background:var(--green);color:var(--bg);border-color:var(--green)}.volume-label{display:flex;align-items:center;gap:15px;font-size:10px;color:var(--muted);margin-top:17px}.volume-label input{flex:1;min-width:0;accent-color:var(--green);height:3px}
+.daily-grid{display:grid;grid-template-columns:1.15fr .94fr 1fr;gap:20px;padding-top:7px}.daily-card{border:1px solid var(--line);background:linear-gradient(130deg,#b9d1c904,#b9d1c900);border-radius:5px;padding:21px 23px;min-width:0;height:245px;position:relative;overflow:hidden}.card-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:10px}.card-heading h2{font-size:12px;font-weight:400;letter-spacing:1px;margin:0;display:flex;align-items:center;gap:12px;white-space:nowrap}.card-index{font-family:var(--mono);font-size:9px;color:var(--faint);letter-spacing:0}.count-pill{font-family:var(--mono);font-size:9px;color:var(--faint);padding:0 6px;border:1px solid var(--line);border-radius:10px;white-space:nowrap}.task-card{display:flex;flex-direction:column}.tasks-body{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#47635c transparent}.empty-note{font-family:var(--serif);font-size:16px;line-height:1.9;letter-spacing:.8px;margin:1px 0;color:#a6b7ae}.empty-note>span{font-family:var(--sans);font-size:10px;color:var(--faint);letter-spacing:.3px}#task-list{list-style:none;margin:0;padding:0}.task-item{display:flex;align-items:center;gap:10px;min-height:32px;font-size:12px;padding:3px 0}.task-check{width:15px;height:15px;border:1px solid #66857966;border-radius:50%;flex-shrink:0;display:grid;place-items:center;padding:0;accent-color:var(--green)}.task-check svg{width:10px;height:10px}.task-check[aria-checked="true"],.task-item.completed .task-check,.task-item.done .task-check{background:var(--green);border-color:var(--green);color:var(--bg)}.task-text{overflow-wrap:anywhere;flex:1;color:#b6c7bf;line-height:1.6}.task-item.completed .task-text,.task-item.done .task-text{text-decoration:line-through;color:var(--faint)}.task-delete{opacity:0;flex-shrink:0;color:var(--faint);font-size:18px;width:24px;height:26px;line-height:1;display:grid;place-items:center}.task-delete svg{width:13px;height:13px}.task-item:hover .task-delete,.task-item:focus-within .task-delete{opacity:1}.task-delete:hover{color:#d5a18f}.task-form{display:flex;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:12px}.task-form>span{font-size:19px;line-height:1;color:var(--faint)}.task-form input{background:none;border:none;outline:none!important;min-width:0;width:100%;font-size:11px;padding:3px 0;letter-spacing:.5px}.task-form input::placeholder{color:var(--faint)}.task-form:focus-within{border-top-color:var(--green)}.task-form button{color:var(--faint);width:25px;height:25px;padding:2px;display:grid;place-items:center}.task-form button svg{width:15px;height:15px}.muted-icon{width:15px;height:15px;color:var(--faint)}.note-card{background:linear-gradient(140deg,#b6b08a08,#b6b08a02);display:flex;flex-direction:column}.journal-preview{font-family:var(--serif);font-size:16px;color:#c2c9b7;line-height:2;text-align:left;letter-spacing:.8px;max-height:103px;overflow:hidden;overflow-wrap:anywhere;white-space:pre-line;padding:0;position:relative;z-index:1}.journal-preview:hover{color:var(--green)}.card-link{margin-top:auto;padding:0;display:flex;align-items:center;gap:22px;color:var(--muted);font-size:10px;width:fit-content;letter-spacing:.5px;position:relative;z-index:1}.card-link svg{width:14px;height:14px}.card-link:hover{color:var(--green);gap:28px}.note-decoration{position:absolute;bottom:5px;right:15px;font-size:130px;font-family:Georgia,serif;line-height:1;color:#afc5a10a;pointer-events:none}.stats-card .card-heading{margin-bottom:8px}.stat-main{display:flex;align-items:center;gap:12px;height:55px}.stat-main>#stat-minutes{font-family:var(--mono);font-size:42px;letter-spacing:-2px;line-height:1;color:var(--green)}.stat-unit{font-size:10px;color:var(--muted);line-height:1.6}.stat-unit>span{display:block;font-size:9px;color:var(--faint)}.week-chart{display:flex;height:72px;align-items:flex-end;gap:13px;padding:5px 1px 0}.week-column{display:flex;flex:1;min-width:0;align-items:center;flex-direction:column;justify-content:flex-end;height:100%;gap:5px}.week-bar{display:block;width:100%;max-width:21px;min-height:2px;background:#59766660;border-radius:2px 2px 0 0;transition:height .4s}.week-column:last-child .week-bar{background:#b2c6a1aa}.week-day{font-family:var(--mono);font-size:8px;color:var(--faint);line-height:1.3}.stats-bottom{display:flex;justify-content:space-between;margin-top:11px;padding-top:10px;border-top:1px solid var(--line);font-size:9px;color:var(--faint);letter-spacing:.4px}.stats-bottom b{color:var(--muted);font-family:var(--mono);font-weight:400}.site-footer{max-width:1440px;margin:27px auto 0;padding:0 48px 22px;display:flex;align-items:center;justify-content:space-between;font-size:9px;letter-spacing:.6px;color:var(--faint)}.footer-dot{padding:0 7px}.site-footer>div{display:flex;align-items:center;gap:22px}.site-footer button{color:var(--faint);font-size:9px;padding:0}.site-footer button:hover{color:var(--green)}.site-footer button>span{padding-left:5px}#storage-status{display:flex;gap:6px;align-items:center}#storage-status i{width:4px;height:4px;border-radius:50%;background:#7f9f7f}
+.section-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:25px;padding:58px 0 34px}.section-intro h1{font-size:39px;line-height:1.5;margin-bottom:11px}.section-intro .eyebrow{margin-bottom:18px}.section-intro p:not(.eyebrow){color:var(--muted);font-size:12px;margin-bottom:0}.outline-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 16px;min-height:39px;border:1px solid var(--line-strong);border-radius:3px;font-size:11px;letter-spacing:.4px;color:var(--muted)}.outline-button:hover{background:#afc5a110;color:var(--green);border-color:#afc5a155}.outline-button svg{width:15px;height:15px}.journal-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:55px;min-height:485px;margin-bottom:26px}.journal-paper{background:linear-gradient(140deg,#b9d1c905,#b9d1c902);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;min-width:0}.paper-heading{padding:15px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px}.journal-day-switch{display:flex;align-items:center;gap:12px}.journal-day-switch>.icon-button{width:25px;height:25px;font-size:15px}#journal-date{border:0;background:none;font-size:11px;color:var(--green);font-family:var(--mono);max-width:150px;letter-spacing:.3px}#journal-status{color:var(--faint);font-size:10px;white-space:nowrap}#journal-input{resize:vertical;background:none;border:0;flex:1;min-height:380px;padding:28px 33px;font-size:16px;font-family:var(--serif);letter-spacing:.7px;line-height:2.2;outline:none;caret-color:var(--green)}#journal-input::placeholder{color:#6c8886;opacity:.7}#journal-input:focus-visible{outline:1px solid #afc5a133;outline-offset:-1px}.paper-bottom{display:flex;justify-content:space-between;align-items:center;padding:15px 28px;border-top:1px solid var(--line);color:var(--faint);font-size:9px;letter-spacing:1px}.paper-bottom svg{width:17px;height:17px}.journal-aside{padding:24px 0}.aside-mark{font-family:var(--serif);writing-mode:vertical-rl;font-size:13px;letter-spacing:5px;padding-bottom:25px;color:var(--amber)}.journal-aside h2{font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.8;letter-spacing:2px;margin-bottom:15px}.journal-aside>p{font-size:11px;color:var(--muted);line-height:2.1;letter-spacing:.6px}.journal-activity{border-top:1px solid var(--line);margin-top:28px;padding-top:18px}.mini-label{font-size:10px;color:var(--faint);margin-bottom:10px;letter-spacing:.6px}.heatmap{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;max-width:210px}.heat-cell{height:14px;background:#a4bfa00a;border:1px solid #a4bfa014;border-radius:2px}.heat-cell[data-level="1"],.heatmap-legend i[data-level="1"]{background:#637d504d}.heat-cell[data-level="2"],.heatmap-legend i[data-level="2"]{background:#829b6380}.heat-cell[data-level="3"],.heatmap-legend i[data-level="3"]{background:#afc5a1}.heatmap-legend{display:flex;align-items:center;gap:4px;color:var(--faint);font-size:8px;margin:10px 0 20px}.heatmap-legend i{width:9px;height:9px;background:#a4bfa00a;border:1px solid #a4bfa014;border-radius:1px}.heatmap-legend span:first-child{margin-right:4px}.heatmap-legend span:last-child{margin-left:4px}.journal-aside .text-button{font-size:10px;gap:10px}.tools-offline{font-size:11px;color:var(--muted);padding-bottom:6px;white-space:nowrap}.tools-workbench{border:1px solid var(--line);border-radius:5px;background:#b9d1c903;margin-bottom:20px;overflow:hidden}.tools-toolbar{display:flex;align-items:center;gap:17px;padding:18px 25px;border-bottom:1px solid var(--line)}.tools-toolbar>label{font-size:11px;color:var(--muted)}.tools-toolbar select{background:#1b2d32;border:1px solid var(--line-strong);border-radius:3px;padding:7px 36px 7px 12px;font-size:12px;min-width:180px}.tools-toolbar>span{font-size:10px;color:var(--faint);margin-left:auto}.tools-editors{display:grid;grid-template-columns:1fr 1fr;min-height:375px}.tools-editors>div{padding:22px 25px;display:flex;flex-direction:column;min-width:0}.tool-input-wrap{border-right:1px solid var(--line)}.tools-editors label{font-size:11px;color:var(--muted);display:flex;gap:12px;align-items:center}.tools-editors label>span{font-size:9px;font-family:var(--mono);color:var(--faint);letter-spacing:1px}.tool-input-wrap>textarea{display:block;background:none;border:0;margin-top:17px;resize:vertical;flex:1;width:100%;min-height:265px;outline:none;color:#c5d5ca;line-height:1.9;font-family:var(--mono);font-size:13px;padding:0}.tool-input-wrap>textarea::placeholder{font-family:var(--sans);font-size:12px;color:var(--faint)}.output-label{display:flex;align-items:center;justify-content:space-between;gap:15px}.output-label>.text-button{padding:0;font-size:10px}#tool-output{font-family:var(--mono);font-size:12px;color:#bdceb9;line-height:1.9;white-space:pre-wrap;word-break:break-word;margin:17px 0 0;max-height:360px;overflow:auto}.tools-actions{display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:18px 25px;border-top:1px solid var(--line)}.tools-actions p{font-size:10px;color:var(--faint);margin:0 auto 0 0}.tools-actions .primary-button{gap:24px}.tools-footnote{font-family:var(--serif);font-size:13px;letter-spacing:1px;color:var(--faint);text-align:center;margin:30px 0}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:150;background:#d2ddc9;color:#172b28;padding:12px 23px;border:1px solid #e0e9d680;border-radius:4px;box-shadow:0 10px 35px #0004;font-size:12px;max-width:calc(100vw - 30px);text-align:center;animation:toast-in .25s ease}.toast button{margin-left:14px;text-decoration:underline}.island-dialog{width:440px;max-width:calc(100vw - 30px);max-height:calc(100vh - 60px);padding:28px 31px;background:#1a2b30;border:1px solid #aac5b933;border-radius:7px;color:var(--text);box-shadow:0 30px 100px #0007;overscroll-behavior:contain;scrollbar-width:thin}.island-dialog::backdrop{background:#071116aa;backdrop-filter:blur(8px)}.island-dialog[open]{animation:arrive .2s ease}.dialog-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px}.dialog-top .eyebrow{font-size:8px;margin:0;letter-spacing:1.7px}.dialog-top .icon-button{width:26px;height:26px}.dialog-top .icon-button svg{width:16px;height:16px}.island-dialog h2{font-family:var(--serif);font-size:29px;letter-spacing:2px;font-weight:400;line-height:1.6;margin-bottom:9px}.dialog-description{font-size:11px;color:var(--muted);margin-bottom:24px;line-height:1.9}.field-label{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;margin:17px 0 8px}.field-label>span{font-size:9px;color:var(--faint)}.field{width:100%;border:1px solid var(--line-strong);background:#10222988;border-radius:3px;padding:10px 13px;font-size:13px}.checkbox-field{display:flex;align-items:center;gap:9px;font-size:11px;color:var(--muted);margin:20px 0}.checkbox-field input{accent-color:var(--green);width:14px;height:14px}.full-width{width:100%;justify-content:space-between}.backup-area{border-top:1px solid var(--line);margin-top:28px;padding-top:22px}.backup-area h3{font-size:12px;font-weight:400;letter-spacing:.7px;margin-bottom:8px}.backup-area p{font-size:10px;color:var(--faint);line-height:1.9;margin-bottom:16px}.backup-actions{display:flex;gap:10px}.backup-actions .outline-button{flex:1;min-height:35px;font-size:10px}.danger-link{font-size:9px;color:#b89581;margin-top:20px;padding:0}.danger-link:hover{color:#e2b6a8}.about-dialog{text-align:left;width:460px}.about-logo{width:48px;height:48px;color:var(--green);margin:3px 0 20px}.about-dialog>p{font-size:12px;color:var(--muted);line-height:2.1;margin:20px 0}.about-dialog .about-note{font-family:var(--serif);color:var(--green);font-size:13px;letter-spacing:.5px;margin:27px 0}.about-version{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:17px;font-size:9px;font-family:var(--mono);color:var(--faint)}.breathe-dialog{text-align:center;width:430px}.breathe-dialog .dialog-top{margin-bottom:26px}.breathe-dialog h2{font-size:25px}.breath-orb{height:130px;width:130px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle,#afc5a125,#afc5a108 65%);border:1px solid #afc5a13d;margin:66px auto;box-shadow:0 0 0 16px #afc5a105,0 0 0 33px #afc5a103;animation:breathe 14s infinite ease-in-out;font-family:var(--serif);font-size:20px;letter-spacing:3px;color:var(--green);will-change:transform}.breath-guide{font-size:10px;color:var(--faint);letter-spacing:1px;margin-bottom:13px}.focus-exit-hint{display:none}.focus-mode .site-header,.focus-mode .day-line,.focus-mode .daily-grid,.focus-mode .site-footer,.focus-mode .hero-copy>.eyebrow,.focus-mode .hero-copy>h1,.focus-mode .hero-description{display:none}.focus-mode main{max-width:1500px}.focus-mode .hero{min-height:calc(100vh - 75px);align-items:center;grid-template-columns:420px 1fr}.focus-mode .hero-copy{padding:0}.focus-mode .timer{max-width:400px}.focus-mode .timer-digits{font-size:105px}.focus-mode .scene{height:600px;align-self:center}.focus-mode .focus-exit-hint{display:flex;align-items:center;justify-content:center;gap:15px;font-size:10px;color:var(--faint);padding-bottom:25px;letter-spacing:1px}.focus-mode .focus-button{color:var(--green)}.noscript-note{position:fixed;top:0;left:0;right:0;background:var(--amber);color:var(--bg);padding:20px;text-align:center;z-index:500}
+@keyframes arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes toast-in{from{opacity:0;bottom:20px}to{opacity:1;bottom:30px}}@keyframes breathe{0%,100%{transform:scale(.84)}28.57%,57.14%{transform:scale(1.18)}}.reduced-motion *,.reduced-motion *::before,.reduced-motion *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+@media(min-width:1550px){.site-header{height:100px}.hero{min-height:535px;grid-template-columns:395px minmax(0,1fr)}.hero-copy{padding-top:40px}h1{font-size:47px}.hero-description{margin-bottom:31px}.scene{min-height:535px}.timer-digits{font-size:82px}.daily-card{height:255px}.day-line{padding-top:32px}}
+@media(max-width:1200px){.site-header{padding:0 32px}.brand-en{display:none}.main-nav{margin-left:0}main{padding:0 32px}.hero{grid-template-columns:340px minmax(0,1fr);min-height:475px}h1{font-size:38px}.hero-copy{padding-top:30px}.scene{min-height:475px}.scene-topline{left:20px}.scene-bottomline{left:5px;right:0}.scene-caption{right:10px;font-size:9px;letter-spacing:.5px}.weather-controls button{padding:6px 8px}.sound-toggle span{font-size:9px}.daily-grid{gap:14px;grid-template-columns:1.12fr .94fr 1fr}.daily-card{padding:19px 18px}.card-heading h2{gap:8px;letter-spacing:.5px;font-size:11px}.journal-preview{font-size:14px}.empty-note{font-size:15px}.site-footer{padding:0 32px 22px}.journal-layout{gap:30px;grid-template-columns:minmax(0,1fr) 230px}}
+@media(max-width:980px){.brand #island-name{font-size:22px;max-width:145px}.header-right{gap:12px}.local-badge{font-size:10px}.hero{grid-template-columns:310px minmax(0,1fr);gap:0;min-height:465px}h1{font-size:34px;letter-spacing:1px}.hero-description{font-size:10px}.hero-copy{padding-top:28px}.timer{max-width:295px}.timer-digits{font-size:70px}.timer-actions{gap:8px}.timer-actions>.primary-button{min-width:173px;padding:9px 18px;gap:26px}.focus-button{font-size:10px}.timer-meta>span{font-size:9px}.presets{gap:4px}.scene{min-height:465px}.scene-topline{left:15px}.scene-topline>span{font-size:8px}.scene-time{font-size:9px}.scene-caption{display:none}.scene-bottomline{left:0;bottom:25px;align-items:flex-start;gap:5px;flex-direction:column}.sound-toggle{padding-left:8px}.weather-controls{gap:0}.weather-controls button{padding:6px 8px}.daily-card{padding:16px 15px;height:231px}.card-heading{margin-bottom:16px}.card-heading h2{font-size:10px;letter-spacing:0;gap:7px}.card-index{font-size:8px}.empty-note{font-size:13px}.empty-note>span{font-size:9px;letter-spacing:0}.journal-preview{font-size:13px}.muted-icon{width:13px;height:13px}.stat-main>#stat-minutes{font-size:36px}.week-chart{gap:9px}.stats-bottom{font-size:8px;letter-spacing:0}.journal-layout{gap:24px;grid-template-columns:minmax(0,1fr) 200px}.section-intro h1{font-size:33px}.journal-aside h2{font-size:22px}.tools-toolbar>span{max-width:200px}.focus-mode .hero{grid-template-columns:330px 1fr}.focus-mode .timer-digits{font-size:86px}.focus-mode .scene{height:500px}}
+@media(max-width:760px){.site-header{height:76px;padding:0 22px;gap:12px}.brand{gap:6px}.brand-mark,.brand-mark svg{width:29px;height:31px}.brand #island-name{font-size:20px;letter-spacing:2px;max-width:120px}.header-right .local-badge{display:none}.header-right{gap:0}.main-nav{gap:17px}.nav-link{font-size:11px;letter-spacing:1px;padding:0 3px}.header-right .icon-button{width:25px}.site-header .icon-button svg{width:17px;height:17px}main{padding:0 22px}.day-line{font-size:9px;padding-top:21px;gap:12px}.hero{display:flex;flex-direction:column;min-height:0;gap:0}.hero-copy{padding-top:27px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:20px}.hero-copy>.eyebrow{grid-column:1/-1;margin-bottom:16px;font-size:8px}.hero-copy>h1{font-size:30px;line-height:1.55;grid-column:1;margin:0;letter-spacing:.3px}.hero-description{grid-column:1;line-height:1.9;font-size:9px;margin:10px 0 0;max-width:160px;align-self:start}.timer{grid-column:2;grid-row:2/5;margin-top:2px;max-width:none;min-width:0}.timer-tabs{font-size:9px;gap:8px;letter-spacing:.3px}.timer-digits{font-size:54px;letter-spacing:-3px;margin:8px 0 4px}.timer-meta{margin-bottom:16px;display:block}.timer-meta>span{display:none}.presets{gap:9px}.timer-actions{gap:7px;flex-wrap:wrap}.timer-actions>.primary-button{min-width:0;flex:1;padding:8px 9px;gap:13px;font-size:10px;min-height:35px;white-space:nowrap}.timer-actions>.primary-button svg{width:14px;height:14px}.reset-button{width:29px;height:29px}.reset-button svg{width:15px;height:15px}.focus-button{font-size:9px;gap:4px;margin-top:1px}.timer-notice{font-size:8px;line-height:1.8;margin-top:9px;letter-spacing:0}.scene{height:355px;min-height:355px;width:100%;margin-top:3px}.scene-topline{left:3px;right:0;top:11px}.scene-topline>span{font-size:8px;letter-spacing:1.5px}.scene-time{font-size:9px}.scene-coordinate{font-size:15px}.coordinate-a{top:54px;left:0}.coordinate-b{bottom:65px;right:0}.scene-bottomline{flex-direction:row;align-items:center;bottom:6px;left:0;right:0}.weather-controls button{padding:6px 9px;font-size:9px;gap:5px}.weather-controls svg{width:12px;height:12px}.sound-toggle{padding-left:0;font-size:9px;gap:5px}.sound-toggle svg{width:13px;height:13px}.sound-panel{bottom:53px;right:0}.daily-grid{grid-template-columns:1fr 1fr;gap:13px;padding-top:15px}.daily-card{height:227px;padding:18px 16px}.task-card{grid-column:1/-1;height:213px}.task-card .empty-note{font-size:15px}.task-card .empty-note>span{font-size:10px}.card-heading h2{font-size:11px;gap:10px}.card-index{font-size:9px}.task-delete{opacity:.7}.journal-preview{font-size:14px}.note-card .card-heading h2,.stats-card .card-heading h2{font-size:10px;gap:6px}.stats-card .card-heading>.muted-icon{display:none}.count-pill{font-size:9px}.stat-main>#stat-minutes{font-size:35px}.stats-card{padding:18px 14px}.week-chart{gap:7px;height:72px}.stat-unit{font-size:9px}.stat-unit>span{font-size:8px}.stats-bottom{font-size:8px}.stats-bottom>span:last-child{display:none}.site-footer{padding:0 22px 22px;margin-top:25px;gap:15px;font-size:8px;letter-spacing:.2px;align-items:flex-start}.site-footer>div{gap:12px}.site-footer button{font-size:8px;white-space:nowrap}#storage-status{display:none}.section-intro{padding:36px 0 26px;gap:15px}.section-intro h1{font-size:27px;letter-spacing:1px}.section-intro .eyebrow{font-size:8px;letter-spacing:1.3px}.section-intro p:not(.eyebrow){font-size:10px;max-width:260px;line-height:1.9}.section-intro>.outline-button{font-size:9px;padding:7px 10px;white-space:nowrap;gap:4px}.section-intro>.outline-button svg{width:13px;height:13px}.journal-layout{display:flex;flex-direction:column;gap:20px}.journal-paper{min-height:430px}.paper-heading{padding:13px 12px;gap:7px}.journal-day-switch{gap:3px}#journal-status{font-size:9px}#journal-date{font-size:10px;max-width:130px}#journal-input{padding:20px;font-size:15px;min-height:310px}.paper-bottom{padding:13px 20px;font-size:8px}.journal-aside{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:12px 0}.aside-mark{display:none}.journal-aside>h2{font-size:19px;grid-column:1;margin:0}.journal-aside>p{font-size:10px;margin:0;grid-column:1}.journal-activity{grid-column:2;grid-row:1/4;margin:0;padding:0;border:0;align-self:center}.heatmap{gap:3px}.heat-cell{height:12px}.mini-label{font-size:8px}.journal-aside>.text-button{grid-column:1/-1;font-size:10px;margin-top:7px}.tools-offline{font-size:9px;white-space:nowrap;align-self:flex-end}.tools-toolbar{padding:15px;gap:10px;flex-wrap:wrap}.tools-toolbar select{min-width:160px;font-size:11px}.tools-toolbar>label{font-size:10px}.tools-toolbar>span{font-size:9px;flex-basis:100%;max-width:none}.tools-editors{grid-template-columns:1fr;min-height:0}.tools-editors>div{padding:19px}.tool-input-wrap{border-right:0;border-bottom:1px solid var(--line)}.tool-input-wrap>textarea{min-height:190px;font-size:12px}.tool-output-wrap{min-height:180px}#tool-output{max-height:300px;font-size:11px}.tools-actions{padding:14px 16px;gap:8px;flex-wrap:wrap}.tools-actions p{flex-basis:100%;font-size:9px;margin-bottom:2px}.tools-actions .primary-button{font-size:10px;min-height:35px;padding:7px 12px;gap:18px}.tools-actions .outline-button{min-height:35px;padding:6px 12px;font-size:10px}.tools-footnote{font-size:11px;line-height:1.9;padding:0 16px}.island-dialog{padding:23px;max-height:calc(100dvh - 35px)}.island-dialog h2{font-size:26px}.dialog-top .eyebrow{font-size:7px}.toast{font-size:11px;bottom:18px;padding:10px 16px}.focus-mode main{padding:0 22px}.focus-mode .hero{display:flex;min-height:calc(100dvh - 55px);justify-content:center;gap:0}.focus-mode .hero-copy{display:block;width:100%;padding-top:28px;text-align:center}.focus-mode .timer{max-width:300px;margin:0 auto}.focus-mode .timer-tabs,.focus-mode .timer-actions,.focus-mode .presets{justify-content:center}.focus-mode .timer-digits{font-size:88px;margin:5px 0}.focus-mode .timer-meta{display:flex;justify-content:center;gap:20px}.focus-mode .timer-meta>span{display:block;font-size:9px}.focus-mode .timer-actions{flex-wrap:nowrap;gap:10px}.focus-mode .timer-actions>.primary-button{flex:0 0 180px;min-height:40px;font-size:11px;gap:35px}.focus-mode .focus-button{font-size:10px}.focus-mode .scene{height:330px;min-height:330px}.focus-mode .scene-topline{top:10px}.focus-mode .focus-exit-hint{font-size:8px;padding-bottom:15px}}
+@media(max-width:390px){.site-header{padding:0 16px}.brand #island-name{font-size:18px;max-width:95px}.main-nav{gap:11px}.nav-link{font-size:10px}.brand-mark,.brand-mark svg{width:26px}.header-right .icon-button{width:22px}main{padding:0 17px}.hero-copy{column-gap:12px}.hero-copy>h1{font-size:27px}.timer-digits{font-size:49px}.timer-tabs{font-size:8px;gap:7px}.timer-actions>.primary-button{font-size:9px;padding:7px 8px;gap:8px}.focus-button{font-size:8px}.focus-button svg{width:11px}.daily-card{padding:16px 12px}.note-card .card-heading h2,.stats-card .card-heading h2{font-size:9px;gap:5px}.card-heading .muted-icon{display:none}.journal-preview{font-size:12px}.stats-bottom{font-size:7px}.scene{height:320px;min-height:320px}.weather-controls button{padding:6px 7px}.sound-toggle>span{font-size:8px}.site-footer{padding:0 17px 18px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+.task-label{display:flex;align-items:center;gap:10px;min-width:0;flex:1;cursor:pointer}.task-label .task-check{margin:0;appearance:none;position:relative}.task-label .task-check:checked{background:var(--green);border-color:var(--green)}.task-label .task-check:checked::after{content:"";position:absolute;left:4px;top:2px;width:4px;height:7px;transform:rotate(45deg);border-right:1.5px solid var(--bg);border-bottom:1.5px solid var(--bg)}#timer-toggle::after{content:"→";font-size:19px;line-height:1}.breath-orb{animation:none}.heat-cell[data-level="4"]{background:#d0ddc2}#tool-output.error{color:#d7a28d}.tool-output-wrap:has(#tool-output:empty)::after{content:"处理结果会出现在这里。";color:var(--faint);font-size:12px;margin-top:18px}.scene{overflow:clip}.count-pill{max-width:60%;overflow:hidden;text-overflow:ellipsis}.task-form input:focus-visible{outline:none}.task-form:focus-within{box-shadow:0 -1px 0 #afc5a144}.task-delete:focus-visible{opacity:1}
+@media(max-width:520px){.hero-copy{display:block}.hero-copy>.eyebrow{margin-bottom:19px}.hero-copy>h1{font-size:32px;letter-spacing:.7px;line-height:1.55}.hero-description{max-width:none;margin:11px 0 26px;font-size:10px}.timer{display:grid;grid-template-columns:minmax(0,1fr) 140px;column-gap:19px;max-width:none}.timer-tabs{grid-column:1;grid-row:1;font-size:10px}.timer-digits{grid-column:1;grid-row:2;font-size:63px;line-height:1.2;margin:8px 0 6px}.timer-meta{grid-column:1;grid-row:3;margin-bottom:0}.timer-actions{grid-column:2;grid-row:2/4;align-self:center;justify-content:flex-start;gap:8px}.timer-actions>.primary-button{flex:0 0 100%;height:39px;min-width:0;font-size:10px;justify-content:space-between;padding:8px 14px}.timer-actions>.reset-button{height:30px;width:30px}.focus-button{font-size:10px;gap:5px;min-height:30px;margin-left:6px}.timer-notice{grid-column:1/-1;font-size:9px;margin-top:12px}.scene{margin-top:20px;height:330px;min-height:330px}.journal-view .section-intro{display:block;position:relative}.journal-view .section-intro .ink-accent{display:block}.journal-view .section-intro>div>p:last-child{max-width:220px}.journal-view .section-intro>.outline-button{position:absolute;right:0;bottom:26px}.header-right .icon-button{width:33px;height:36px}.task-item{min-height:39px}.task-label{min-height:33px}.task-label .task-check{width:17px;height:17px}.task-label .task-check:checked::after{left:5px;top:3px}.task-delete{width:32px;height:32px}.weather-controls button{min-height:36px}.sound-toggle{min-height:36px}.focus-mode .timer{display:block}.focus-mode .timer-actions{display:flex;justify-content:center;flex-wrap:nowrap}.focus-mode .timer-actions>.primary-button{flex:0 0 180px}.focus-mode .scene{margin-top:20px}.focus-mode .hero-copy{padding-top:30px}}
+.recovery-link{display:flex;margin-top:17px;font-size:10px;color:var(--green)}.recovery-list{max-height:350px;overflow-y:auto;scrollbar-width:thin}.recovery-row{display:flex;justify-content:space-between;align-items:center;gap:14px;border-top:1px solid var(--line);padding:17px 0}.recovery-row>div:first-child{min-width:0}.recovery-row strong{font-size:12px;font-weight:400;color:var(--green)}.recovery-row p{font-size:9px;line-height:1.8;color:var(--faint);margin:5px 0 0}.recovery-row-actions{display:flex;gap:7px;flex-shrink:0}.recovery-row-actions button{font-size:10px;padding:5px 10px;min-height:30px}
+@media print{body{background:#fff;color:#172b28}.site-header,.site-footer,.page-grain,.scene,.timer-actions,.daily-grid,dialog{display:none}.journal-layout{display:block}.journal-paper{border:1px solid #aaa}#journal-input{color:#172b28}main{padding:0}#journal-input{height:600px}.journal-aside{display:none}}
+
+</style>
+  <script>
+/* 未名岛 · a small place that keeps growing. Entirely offline, hand-drawn Canvas. */
+(function () {
+  'use strict';
+  const W = 900, H = 560, TAU = Math.PI * 2;
+  let canvas, ctx, art, artCtx, running = false, raf = 0, last = 0;
+  let weather = 'clear', time = 'night', progress = 0, reduced = false;
+  let width = W, height = H, dpr = 1, scale = 1, offsetX = 0, offsetY = 0;
+  let resizeObserver, motionQuery, elapsed = 0, burst = [], lastTouch = 0;
+  const rand = (seed) => { let a = seed >>> 0; return () => { a += 0x6D2B79F5; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; };
+  const rng = rand(71629);
+  const stars = Array.from({ length: 78 }, () => ({ x: 62 + rng() * 778, y: 18 + rng() * 282, r: .5 + rng() * 1.2, p: rng() * TAU }));
+  const motes = Array.from({ length: 22 }, () => ({ x: 200 + rng() * 500, y: 210 + rng() * 200, p: rng() * TAU, speed: .22 + rng() * .4, r: .7 + rng() * .8 }));
+  const precipitation = Array.from({ length: 95 }, () => ({ x: rng() * W, y: rng() * H, speed: .65 + rng(), p: rng() * TAU }));
+  const trees = [
+    [289, 230, .95, 0], [338, 224, 1.23, 1], [390, 224, .92, 0],
+    [633, 250, 1.03, 1], [673, 270, 1.2, 0], [710, 294, .79, 1],
+    [219, 280, 1.14, 0], [256, 295, .72, 1], [296, 270, .82, 1],
+    [213, 325, .66, 0], [261, 346, 1.03, 0], [306, 369, .77, 1],
+    [666, 354, .91, 0], [713, 334, .62, 1], [615, 379, .58, 1]
+  ];
+  const palette = () => time === 'dawn' ? {
+    land: '#52715d', landLight: '#69826a', landDark: '#3d6153', rim: '#8a9b76',
+    rock: '#273f41', rockLight: '#3d5652', rockDark: '#1b3037', tree: '#255447', treeLight: '#3e7055', treeDark: '#1c403b', water: '#5f9e9b', waterLight: '#b1d1b6'
+  } : {
+    land: '#375b4d', landLight: '#4c6f55', landDark: '#294a42', rim: '#6d8160',
+    rock: '#20383b', rockLight: '#304d49', rockDark: '#152a32', tree: '#214d40', treeLight: '#376448', treeDark: '#163a34', water: '#4a8a87', waterLight: '#a6c4ac'
+  };
+  function poly(c, points, fill, stroke, lineWidth = 1) {
+    c.beginPath(); points.forEach((p, i) => i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1])); c.closePath();
+    if (fill) { c.fillStyle = fill; c.fill(); }
+    if (stroke) { c.strokeStyle = stroke; c.lineWidth = lineWidth; c.lineJoin = 'round'; c.stroke(); }
+  }
+  function line(c, points, color, w = 1) {
+    c.beginPath(); points.forEach((p, i) => i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1])); c.strokeStyle = color; c.lineWidth = w; c.lineCap = 'round'; c.lineJoin = 'round'; c.stroke();
+  }
+  function ellipse(c, x, y, rx, ry, fill, rotation = 0) { c.beginPath(); c.ellipse(x, y, rx, ry, rotation, 0, TAU); c.fillStyle = fill; c.fill(); }
+  function glow(c, x, y, r, color) { const g = c.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, color); g.addColorStop(1, 'rgba(224,181,102,0)'); c.fillStyle = g; c.fillRect(x-r, y-r, r*2, r*2); }
+  function landPath(c) {
+    c.beginPath(); c.moveTo(137, 285); c.bezierCurveTo(163, 252, 186, 234, 224, 218);
+    c.lineTo(329, 185); c.quadraticCurveTo(406, 169, 459, 176); c.lineTo(585, 188);
+    c.quadraticCurveTo(635, 197, 679, 224); c.lineTo(744, 271); c.quadraticCurveTo(767, 291, 785, 315);
+    c.lineTo(716, 367); c.quadraticCurveTo(674, 393, 590, 404); c.lineTo(441, 412);
+    c.quadraticCurveTo(341, 401, 249, 361); c.lineTo(161, 309); c.closePath();
+  }
+  function streamPath(c) {
+    c.beginPath(); c.moveTo(399, 230); c.bezierCurveTo(424, 247, 415, 261, 384, 274);
+    c.bezierCurveTo(355, 286, 333, 300, 357, 316); c.bezierCurveTo(382, 332, 421, 328, 427, 349);
+    c.bezierCurveTo(433, 372, 397, 386, 404, 408);
+  }
+  function rock(c, x, y, s, tint) {
+    const p = palette(); ellipse(c, x+3*s, y+3*s, 19*s, 7*s, 'rgba(8,29,27,.25)');
+    poly(c, [[x-17*s,y],[x-12*s,y-13*s],[x+3*s,y-20*s],[x+17*s,y-9*s],[x+15*s,y+3*s],[x-2*s,y+8*s]], tint || p.rockLight);
+    poly(c, [[x-12*s,y-13*s],[x+3*s,y-20*s],[x+17*s,y-9*s],[x,y-4*s]], '#52695b');
+    poly(c, [[x,y-4*s],[x+17*s,y-9*s],[x+15*s,y+3*s],[x-2*s,y+8*s]], p.rock);
+    line(c, [[x-11*s,y-11*s],[x+1*s,y-17*s],[x+8*s,y-13*s]], '#73816a', .7);
+  }
+  function fern(c, x, y, s = 1, color = '#6d8961') {
+    line(c, [[x,y],[x-3*s,y-15*s]], color, .9);
+    for (let i = 0; i < 5; i++) { const yy = y - i*2.6*s; line(c, [[x-2*i/5*s,yy],[x-(8-i)*s,yy-5*s]], color, .8); line(c, [[x-2*i/5*s,yy],[x+(7-i)*s,yy-6*s]], color, .8); }
+  }
+  function tree(c, x, y, s, variant = 0) {
+    const p = palette(), h = 103*s, w = 32*s;
+    ellipse(c, x+6*s, y+3*s, 29*s, 9*s, 'rgba(9,31,27,.27)', -.08);
+    line(c, [[x,y],[x-1*s,y-56*s]], '#615e43', 5*s);
+    line(c, [[x+1*s,y-1*s],[x+1*s,y-47*s]], '#9b8b5b', 1*s);
+    const levels = [[.03,.39,.36],[.17,.60,.57],[.36,.82,.79],[.56,1,1]];
+    levels.slice().reverse().forEach(([top,bottom,wide], index) => {
+      const topY = y-h+top*h, baseY = y-h+bottom*h-5*s, ww = w*wide;
+      poly(c, [[x,topY],[x-ww*.33,topY+(baseY-topY)*.42],[x-ww*.23,topY+(baseY-topY)*.41],[x-ww*.69,topY+(baseY-topY)*.77],[x-ww*.58,topY+(baseY-topY)*.75],[x-ww,baseY],[x-ww*.35,baseY+5*s],[x+ww*.22,baseY+7*s],[x+ww,baseY-1*s],[x+ww*.58,topY+(baseY-topY)*.72],[x+ww*.69,topY+(baseY-topY)*.75],[x+ww*.26,topY+(baseY-topY)*.4],[x+ww*.37,topY+(baseY-topY)*.43]], variant ? p.treeLight : p.tree);
+      poly(c, [[x,topY],[x+ww*.37,topY+(baseY-topY)*.43],[x+ww*.26,topY+(baseY-topY)*.4],[x+ww*.69,topY+(baseY-topY)*.75],[x+ww*.58,topY+(baseY-topY)*.72],[x+ww,baseY-1*s],[x+ww*.22,baseY+7*s],[x+ww*.08,baseY-4*s]], p.treeDark);
+      line(c, [[x-ww*.78,baseY-2*s],[x-ww*.37,baseY+1*s],[x-ww*.04,baseY+2*s]], variant ? '#64815a' : '#4f7150', .8*s);
+      if (weather === 'snow') { line(c, [[x-ww*.8,baseY-3*s],[x-ww*.34,baseY+1*s],[x+ww*.13,baseY+3*s]], '#c2d0bf', 3*s); }
+      if (index < 2) line(c, [[x-ww*.3,topY+(baseY-topY)*.45],[x-ww*.05,topY+(baseY-topY)*.48]], '#6b8256', .65*s);
+    });
+  }
+  function mushrooms(c, x, y, s = 1) {
+    [[-4,0,.7],[5,4,1]].forEach(([dx,dy,k]) => { line(c, [[x+dx*s,y+dy*s],[x+dx*s,y+dy*s-7*k*s]], '#b8ad7f', 1.5*s); c.beginPath(); c.ellipse(x+dx*s,y+dy*s-7*k*s,5*k*s,3*k*s,0,Math.PI,TAU); c.fillStyle='#bc7957';c.fill(); ellipse(c,x+(dx-1)*s,y+(dy-8*k)*s,.75*s,.6*s,'#e9c695'); });
+  }
+  function island(c) {
+    const p = palette();
+    const shade = c.createRadialGradient(451, 486, 0, 451, 486, 290); shade.addColorStop(0, 'rgba(0,9,14,.29)'); shade.addColorStop(.68, 'rgba(0,9,14,.10)'); shade.addColorStop(1, 'rgba(0,9,14,0)');
+    c.save(); c.translate(0,327); c.scale(1,.34); c.fillStyle=shade; c.fillRect(100,150,700,660); c.restore();
+    poly(c, [[137,285],[161,309],[249,361],[441,412],[590,404],[716,367],[785,315],[749,377],[666,429],[593,447],[547,480],[456,511],[394,490],[335,466],[293,421],[222,397],[184,356]], p.rock);
+    poly(c, [[161,309],[249,361],[293,421],[335,466],[273,437],[222,397],[184,356]], '#2b4240');
+    poly(c, [[249,361],[360,400],[335,466],[293,421]], p.rockLight);
+    poly(c, [[360,400],[441,412],[456,511],[394,490],[335,466]], '#1a3035');
+    poly(c, [[441,412],[514,408],[547,480],[456,511]], '#29413f');
+    poly(c, [[514,408],[590,404],[593,447],[547,480]], '#1b3135');
+    poly(c, [[590,404],[716,367],[666,429],[593,447]], '#2b4440');
+    poly(c, [[716,367],[785,315],[749,377],[666,429]], '#1a3235');
+    poly(c, [[360,400],[335,466],[354,446],[373,424]], '#364f45');
+    poly(c, [[441,412],[456,511],[470,464]], '#122b31');
+    poly(c, [[590,404],[666,429],[635,400]], '#3c574a');
+    line(c, [[233,369],[258,383],[270,407]], '#43564a', 1);
+    line(c, [[304,389],[310,411],[326,420]], '#182e32', 1.3);
+    line(c, [[565,425],[548,441],[553,455]], '#4a5b49', .8);
+    line(c, [[702,382],[677,400],[668,414]], '#536451', .8);
+    landPath(c); const top = c.createLinearGradient(350,160,470,420); top.addColorStop(0,p.landLight); top.addColorStop(.45,p.land); top.addColorStop(1,p.landDark); c.fillStyle=top; c.fill();
+    c.save(); landPath(c);c.clip();
+    ellipse(c, 388,269,119,57,'rgba(111,141,93,.16)',-.18); ellipse(c, 562,337,132,40,'rgba(130,146,90,.10)',.12);
+    const r = rand(720); for(let i=0;i<190;i++){const x=156+r()*600,y=185+r()*225;ellipse(c,x,y,.6+r()*1.9,.35+r()*.7,i%3?'rgba(163,173,111,.17)':'rgba(9,37,32,.21)');}
+    streamPath(c);c.lineWidth=32;c.strokeStyle='rgba(14,44,40,.38)';c.lineCap='round';c.stroke();
+    streamPath(c);c.lineWidth=24;c.strokeStyle=p.water;c.stroke();
+    streamPath(c);c.lineWidth=15;c.strokeStyle='rgba(124,175,156,.24)';c.stroke();
+    c.restore();
+    c.beginPath();c.moveTo(138,285);c.lineTo(162,306);c.lineTo(251,356);c.quadraticCurveTo(341,396,441,406);c.lineTo(590,399);c.quadraticCurveTo(672,389,716,362);c.lineTo(782,315);c.strokeStyle=p.rim;c.lineWidth=2.2;c.stroke();
+    line(c,[[166,315],[251,366],[354,402]],'#193a34',4);
+    // Hanging roots and a small tuft of ivy make the stone feel alive.
+    [[225,358,21],[277,386,29],[329,401,18],[608,400,29],[686,381,21]].forEach(([x,y,h])=>{c.beginPath();c.moveTo(x,y);c.bezierCurveTo(x-4,y+h*.4,x+5,y+h*.7,x-1,y+h);c.strokeStyle='#738260';c.lineWidth=1;c.stroke();for(let j=0;j<4;j++)ellipse(c,x+(j%2?3:-3),y+5+j*4,3.3,1.6,'#5e7850',j%2?.7:-.7);});
+    // A calm pool sits above the little stream.
+    ellipse(c,366,293,33,18,'rgba(19,54,47,.5)',-.2);ellipse(c,366,290,30,15,p.water,-.2);
+    c.beginPath();c.ellipse(365,290,22,10,-.2,.1,2.7);c.strokeStyle='rgba(178,209,179,.52)';c.lineWidth=.9;c.stroke();
+    ellipse(c,354,290,5.5,2.6,'#76976a',-.4);line(c,[[354,290],[359,288]],p.water,1);
+    // Worn stones lead home.
+    [[434,303,10,4],[454,305,11,5],[474,311,10,5],[495,318,11,5],[517,325,9,4],[538,331,10,4]].forEach(([x,y,rx,ry],i)=>{ellipse(c,x+1,y+2,rx,ry,'rgba(14,36,32,.28)',-.15);ellipse(c,x,y,rx,ry,i%2?'#7d8a6b':'#8f9674',-.15);line(c,[[x-rx*.5,y-1],[x+rx*.45,y-2]],'#acaa83',.7);});
+    // A footbridge: every plank has a little light along its worn edge.
+    ellipse(c,413,342,29,9,'rgba(10,31,27,.24)',.2);
+    poly(c,[[390,323],[441,338],[433,352],[382,337]],'#514c38');
+    for(let i=0;i<8;i++){const x=384+i*6.35,y=337+i*1.86;line(c,[[x,y],[x+8,y-13]],'#8c8660',4.9);line(c,[[x-1,y],[x+6,y-12]],'#b3a77a',.65);}
+    [[387,327],[437,342]].forEach(([x,y])=>line(c,[[x,y],[x,y-13]],'#948a5f',2));
+    line(c,[[387,314],[437,329]],'#8e8860',1.5);
+    rock(c,398,235,.61);rock(c,381,245,.48);rock(c,343,311,.45);rock(c,440,370,.45);rock(c,742,315,.62);rock(c,181,288,.58);
+    // A few small cairns, fern fronds and mushrooms reward a closer look.
+    rock(c,567,379,.37);rock(c,567,371,.22);rock(c,568,366,.14);
+    [[319,280,.8],[328,287,.65],[432,270,.55],[449,367,.85],[592,364,.65],[637,307,.7],[204,307,.6],[683,350,.6]].forEach(v=>fern(c,...v));
+    mushrooms(c,284,327,.9);mushrooms(c,641,333,.8);mushrooms(c,460,277,.65);
+    // Small flowers on the open south bank.
+    const flower = rand(518);for(let i=0;i<18;i++){let x=466+flower()*114,y=355+flower()*25;line(c,[[x,y],[x+1,y-5]],'#6e8155',.8);ellipse(c,x+1,y-5,1.4,1.1,i%3?'#b0b886':'#d5bb7d');}
+    if(weather==='snow'){c.save();landPath(c);c.clip();ellipse(c,505,360,74,16,'rgba(213,221,205,.15)',.1);ellipse(c,289,259,73,15,'rgba(213,221,205,.15)',-.3);c.restore();}
+  }
+  function cabin(c) {
+    ellipse(c,548,301,89,31,'rgba(8,26,25,.25)',-.08);
+    // A projecting wooden veranda.
+    poly(c,[[462,288],[548,317],[622,280],[622,288],[548,327],[462,297]],'#3f4436');
+    poly(c,[[459,287],[548,316],[624,279],[535,250]],'#727157');
+    for(let i=0;i<11;i++)line(c,[[468+i*7.1,290+i*2.38],[537+i*7.1,254+i*2.38]],'#4b5340',.8);
+    poly(c,[[480,304],[527,320],[527,329],[480,313]],'#8c8560');
+    poly(c,[[476,313],[523,329],[523,336],[476,320]],'#6c6d4f');
+    line(c,[[477,313],[523,329]],'#b0a477',1.1);
+    // Gable and sheltered side wall.
+    poly(c,[[474,226],[511,184],[548,251],[548,310],[474,285]],'#777054');
+    poly(c,[[548,251],[609,219],[609,279],[548,310]],'#4a5141');
+    for(let i=0;i<8;i++){line(c,[[476,237+i*7],[546,261+i*7]],'#514f3c',.8);line(c,[[550,257+i*6],[607,227+i*6]],'#333f35',.8);}
+    line(c,[[477,228],[477,283],[548,308]],'#a0966b',1.8);line(c,[[548,253],[548,308],[607,277]],'#8e8a60',1.4);
+    // Left and right roof planes with individual standing seams.
+    poly(c,[[463,231],[507,174],[573,141],[530,198]],'#65736a');
+    poly(c,[[507,174],[557,257],[624,223],[573,141]],'#42574f');
+    poly(c,[[507,174],[557,257],[557,263],[503,177]],'#293f39');
+    poly(c,[[557,257],[624,223],[624,229],[557,263]],'#233a35');
+    for(let i=1;i<9;i++){const u=i/9;line(c,[[507+66*u,174-33*u],[557+67*u,257-34*u]],'#78907a',.8);}
+    for(let i=1;i<6;i++){const u=i/6;line(c,[[507+50*u,174+83*u],[573+51*u,141+82*u]],'rgba(24,52,42,.42)',1.5);}
+    for(let i=1;i<5;i++){const u=i/5;line(c,[[463+44*u,231-57*u],[530+43*u,198-57*u]],'#83917a',.8);}
+    line(c,[[463,231],[507,174],[573,141],[624,223]],'#97a080',1.2);
+    line(c,[[508,175],[557,257],[624,223]],'#819579',1);
+    // Moss slowly follows the rain down the north edge.
+    line(c,[[569,146],[578,160],[585,174]],'#778b5a',3);line(c,[[612,216],[604,220],[599,221]],'#657c50',3);
+    // A proper brick chimney.
+    poly(c,[[579,172],[591,178],[600,172],[588,167]],'#7e7a65');
+    poly(c,[[579,172],[591,178],[591,144],[579,139]],'#7c7660');
+    poly(c,[[591,178],[600,172],[600,139],[591,144]],'#4d5b4d');
+    poly(c,[[576,139],[590,145],[603,138],[588,132]],'#969078');
+    poly(c,[[581,138],[590,141],[597,137],[588,135]],'#2e3e37');
+    for(let i=0;i<4;i++){line(c,[[580,147+i*7],[590,151+i*7],[599,146+i*7]],'rgba(43,58,44,.6)',.8);}
+    // Amber windows: the front room, attic, and desk by the side window.
+    glow(c,494,266,41,'rgba(244,185,93,.14)');
+    poly(c,[[483,247],[505,254],[505,277],[483,270]],'#322f25','#aa9967',2);
+    poly(c,[[485,249],[503,255],[503,274],[485,268]],'#edbb6d');
+    poly(c,[[485,249],[503,255],[503,262],[485,256]],'#f6d88b');
+    line(c,[[494,252],[494,271]],'#66583d',1.7);line(c,[[485,259],[503,265]],'#66583d',1.5);
+    poly(c,[[481,270],[507,279],[507,282],[481,273]],'#b2a276');
+    // Open shutters are deliberately slightly uneven.
+    poly(c,[[479,248],[473,248],[473,269],[479,270]],'#394b3b','#7d825a',.6);
+    poly(c,[[509,256],[515,261],[515,281],[509,277]],'#394b3b','#7d825a',.6);
+    poly(c,[[565,259],[593,244],[593,268],[565,282]],'#26352d','#a79c6d',2);
+    poly(c,[[567,260],[591,247],[591,266],[567,278]],'#eab96d');
+    poly(c,[[568,262],[579,256],[579,272],[568,278]],'#f5d68c');
+    line(c,[[579,254],[579,273]],'#665c3e',1.7);line(c,[[566,270],[592,257]],'#665c3e',1.5);
+    // Curtains catch the last bit of lamplight.
+    poly(c,[[567,260],[572,257],[571,271],[567,278]],'#dac695');poly(c,[[587,250],[591,247],[591,266],[588,267]],'#bba974');
+    poly(c,[[519,262],[538,268],[538,305],[519,299]],'#39443a','#9e9468',1.3);
+    poly(c,[[523,266],[534,270],[534,280],[523,276]],'#d7ab62');ellipse(c,534,290,1.4,1.4,'#d7bb78');
+    ellipse(c,511,224,7,9,'#303a2e',-.2);ellipse(c,511,224,5,7,'#dcba75',-.2);line(c,[[511,218],[511,230]],'#756a48',1);line(c,[[506,222],[516,225]],'#756a48',1);
+    // One little reading chair on the porch.
+    line(c,[[593,289],[593,304],[602,299],[602,285]],'#b3a178',2);poly(c,[[587,289],[596,292],[605,287],[596,284]],'#a09168');line(c,[[587,289],[587,299]],'#8b805d',2);line(c,[[590,277],[600,280],[600,289],[590,286],[590,277]],'#a89569',2);
+    // The handrail stops at the steps.
+    [[465,289],[548,317],[620,282]].forEach(([x,y])=>line(c,[[x,y],[x,y-16]],'#8d8c64',2));
+    line(c,[[548,302],[620,267]],'#a09b70',1.8);
+    // Porch lantern, with a halo that never floods the whole scene.
+    line(c,[[467,284],[467,264],[473,264]],'#a1976b',1.5);glow(c,468,278,24,'rgba(250,190,84,.22)');
+    poly(c,[[464,272],[471,274],[471,282],[464,280]],'#efc775','#a78f59',.6);line(c,[[463,271],[468,269],[473,273]],'#b09d6b',1.5);
+    // Split firewood under the eave.
+    [[610,278],[615,280],[606,282]].forEach(([x,y])=>{line(c,[[x-3,y+3],[x+3,y]],'#8f7d55',4);ellipse(c,x-3,y+3,2,2,'#b09a6b');});
+    if(weather==='snow'){line(c,[[464,230],[507,174],[573,141],[624,223]],'#cdd6c4',3);line(c,[[559,256],[621,225]],'#c0ceba',3);line(c,[[576,138],[588,132],[603,138]],'#dbe1d0',3);}
+  }
+  function details(c) {
+    // A modest telescope, looking past the edge of the island.
+    const x=344,y=362;line(c,[[x,y],[x-8,y+15]],'#a3a27b',1.3);line(c,[[x,y],[x+8,y+14]],'#a3a27b',1.3);line(c,[[x,y],[x+1,y+17]],'#818568',1.3);
+    line(c,[[x-10,y-5],[x+13,y-15]],'#849892',5);line(c,[[x-10,y-5],[x-15,y-3]],'#b9bd9b',6);line(c,[[x+11,y-15],[x+15,y-17]],'#b9bd9b',6);line(c,[[x,y],[x+1,y-10]],'#8f9471',2);
+    // A place for tomorrow: seedlings appear as things are saved.
+    const n=Math.min(8,Math.max(0,progress));for(let i=0;i<n;i++){const x=479+i*14,y=378+Math.sin(i*.9)*5;ellipse(c,x,y+2,5,2,'rgba(8,31,25,.24)');line(c,[[x,y],[x,y-8]],'#a3b374',1);ellipse(c,x-3,y-6,3.5,1.6,'#87a66c',.6);ellipse(c,x+3,y-8,3.5,1.6,'#aec082',-.5);}
+    // A sealed letter waits quietly on the doorstep.
+    poly(c,[[511,312],[519,315],[524,312],[516,309]],'#c9bf91');line(c,[[511,312],[517,313],[516,309]],'#a09268',.5);
+  }
+  function bake() {
+    if(!ctx)return;const p=palette();
+    art=document.createElement('canvas');art.width=Math.round(W*dpr);art.height=Math.round(H*dpr);artCtx=art.getContext('2d');artCtx.scale(dpr,dpr);
+    const c=artCtx;island(c);
+    // Objects are depth sorted so the woods have actual space between them.
+    const objects=trees.map(t=>({y:t[1],draw:()=>tree(c,...t)}));objects.push({y:309,draw:()=>cabin(c)});objects.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());details(c);
+    // A small outlying stone and trailing roots below the main island.
+    poly(c,[[315,462],[328,456],[343,463],[337,479],[326,486]],p.rock);poly(c,[[315,462],[328,456],[343,463],[327,467]],p.rockLight);
+    line(c,[[497,493],[501,513],[498,524]],'#49664e',1);ellipse(c,500,513,4,1.8,'#648055',.6);
+  }
+  function sky(c,t) {
+    const dawn=time==='dawn';
+    // Transparent, broad glazes integrate into the surrounding interface.
+    let g=c.createRadialGradient(dawn?604:447,158,0,447,224,340);g.addColorStop(0,dawn?'rgba(199,156,108,.13)':'rgba(66,114,111,.13)');g.addColorStop(1,'rgba(39,82,83,0)');c.fillStyle=g;c.fillRect(0,0,W,H);
+    for(const s of stars){const a=(dawn?.24:.56)+Math.sin(t*.45+s.p)*.17;c.globalAlpha=Math.max(.06,a);ellipse(c,s.x,s.y,s.r,s.r,dawn?'#bdc5ae':'#b4c5b7');if(s.r>1.5){line(c,[[s.x-3,s.y],[s.x+3,s.y]],'#9bb4ad',.5);line(c,[[s.x,s.y-3],[s.x,s.y+3]],'#9bb4ad',.5);}}c.globalAlpha=1;
+    // A thin crescent, kept small so the island remains the protagonist.
+    c.save();c.translate(733,83);c.rotate(-.35);c.beginPath();c.moveTo(2,-16);c.bezierCurveTo(-19,-10,-18,14,3,17);c.bezierCurveTo(-9,6,-7,-7,2,-16);c.fillStyle=dawn?'#c9b987':'#c1c9a5';c.fill();c.restore();
+    if(dawn){g=c.createRadialGradient(737,85,0,737,85,70);g.addColorStop(0,'rgba(236,196,122,.12)');g.addColorStop(1,'rgba(236,196,122,0)');c.fillStyle=g;c.fillRect(660,10,155,155);}
+    // Wisps of cloud behind the floating land.
+    [[164,395,84,13],[737,420,77,10],[126,198,53,8]].forEach(([x,y,rx,ry],i)=>{const dx=reduced?0:Math.sin(t*.07+i)*9;const g=c.createRadialGradient(x+dx,y,0,x+dx,y,rx);g.addColorStop(0,'rgba(139,169,153,.065)');g.addColorStop(1,'rgba(139,169,153,0)');c.save();c.translate(0,y);c.scale(1,ry/rx);c.translate(0,-y);c.fillStyle=g;c.fillRect(x+dx-rx,y-rx,rx*2,rx*2);c.restore();});
+  }
+  function water(c,t) {
+    const p=palette();
+    // Water slips over the front lip into nothing. Several translucent ribbons
+    // avoid the solid plastic look of a single opaque waterfall.
+    const g=c.createLinearGradient(402,398,402,485);g.addColorStop(0,'rgba(146,191,172,.80)');g.addColorStop(.48,'rgba(100,163,154,.56)');g.addColorStop(1,'rgba(100,163,154,0)');
+    c.beginPath();c.moveTo(392,399);c.bezierCurveTo(398,422,386,444,394,474);c.quadraticCurveTo(402,482,411,476);c.bezierCurveTo(409,447,419,424,414,405);c.closePath();c.fillStyle=g;c.fill();
+    for(let i=0;i<8;i++){const x=395+i*2.2, yy=405+((t*25+i*11)%67);c.beginPath();c.moveTo(x,yy);c.quadraticCurveTo(x-3,yy+7,x-1,yy+15);c.strokeStyle='rgba(193,221,196,'+(.12+(i%3)*.08)+')';c.lineWidth=i%2?.8:1.3;c.stroke();}
+    ellipse(c,404,404,12,3,'rgba(195,215,183,.56)',.17);
+    for(let i=0;i<3;i++){let z=(t*.3+i*.33)%1;ellipse(c,400+Math.sin(i*7)*10,471+z*16,3+z*10,1+z*3,'rgba(142,190,167,'+((1-z)*.08)+')');}
+    // Little current marks in the pool are intentionally slow.
+    c.beginPath();c.ellipse(370,291,12+Math.sin(t*.5)*2,4.2,-.2,.15,2.6);c.strokeStyle='rgba(196,217,182,.27)';c.lineWidth=.8;c.stroke();
+    c.beginPath();c.moveTo(379,319);c.quadraticCurveTo(391,323,403,324);c.strokeStyle='rgba(185,211,175,.3)';c.lineWidth=.8;c.stroke();
+  }
+  function smoke(c,t) {
+    if(reduced){c.beginPath();c.moveTo(589,132);c.bezierCurveTo(581,120,602,112,594,99);c.strokeStyle='rgba(179,186,161,.18)';c.lineWidth=5;c.lineCap='round';c.stroke();return;}
+    for(let i=0;i<7;i++){const u=(t*.09+i/7)%1,x=590+Math.sin(u*8+t*.12)*7+u*15,y=132-u*74;ellipse(c,x,y,3+u*9,3+u*5,'rgba(185,193,172,'+((1-u)*.10)+')',-.3);}
+  }
+  function ambience(c,t) {
+    if(weather==='clear'){
+      for(const m of motes){const x=m.x+Math.sin(t*m.speed+m.p)*14,y=m.y+Math.cos(t*m.speed*.7+m.p)*8,a=.23+(Math.sin(t*.9+m.p)+1)*.24;c.globalAlpha=a;glow(c,x,y,9,'rgba(227,209,125,.15)');ellipse(c,x,y,m.r,m.r,'#dfd69b');}c.globalAlpha=1;
+    }else if(weather==='rain'){
+      c.save();c.lineWidth=.7;for(const q of precipitation){const x=(q.x-t*22*q.speed+W*100)%W,y=(q.y+t*190*q.speed)%H;c.strokeStyle='rgba(167,198,190,.19)';c.beginPath();c.moveTo(x,y);c.lineTo(x-3,y+12);c.stroke();}c.restore();
+      for(let i=0;i<5;i++){let u=(t*.7+i*.2)%1;c.beginPath();c.ellipse(338+i*70,341+Math.sin(i*9)*28,u*7,u*2,0,0,TAU);c.strokeStyle='rgba(173,203,181,'+((1-u)*.2)+')';c.lineWidth=.5;c.stroke();}
+    }else{
+      for(const q of precipitation){const x=(q.x+Math.sin(t*.3+q.p)*13+t*4*q.speed)%W,y=(q.y+t*16*q.speed)%H;ellipse(c,x,y,.7+q.speed*.5,.7+q.speed*.5,'rgba(213,224,212,.57)');}
+    }
+    for(let i=burst.length-1;i>=0;i--){const b=burst[i],age=t-b.born;if(age>1.8){burst.splice(i,1);continue;}const u=age/1.8,a=(1-u)*.8,x=b.x+Math.cos(b.angle)*u*b.v,y=b.y+Math.sin(b.angle)*u*b.v-u*20;c.globalAlpha=a;ellipse(c,x,y,1.5*(1-u)+.3,1.5*(1-u)+.3,'#ead99b');}c.globalAlpha=1;
+  }
+  function draw(timestamp) {
+    if(!ctx)return;
+    const t=reduced?12:elapsed;
+    ctx.clearRect(0,0,width,height);ctx.save();ctx.translate(offsetX,offsetY);ctx.scale(scale,scale);
+    sky(ctx,t);ctx.drawImage(art,0,0,art.width,art.height,0,0,W,H);water(ctx,t);smoke(ctx,t);ambience(ctx,t);
+    ctx.restore();
+  }
+  function frame(timestamp) {
+    if(!running)return;raf=requestAnimationFrame(frame);
+    if(timestamp-last<33)return;
+    const dt=Math.min((timestamp-last)/1000,.08);last=timestamp;if(!reduced)elapsed+=dt;draw(timestamp);
+  }
+  function start(){if(!canvas||running||document.hidden)return;running=true;last=performance.now();draw(last);raf=requestAnimationFrame(frame);}
+  function stop(){running=false;cancelAnimationFrame(raf);}
+  function visibility(){if(document.hidden)stop();else start();}
+  function resize(){
+    if(!canvas)return;const host=canvas.parentElement,rect=canvas.getBoundingClientRect();
+    width=Math.max(1,rect.width||host.clientWidth||W);height=Math.max(1,rect.height||host.clientHeight||width*H/W);
+    dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    scale=Math.min(width/W,height/H);offsetX=(width-W*scale)/2;offsetY=(height-H*scale)/2;bake();draw(performance.now());
+  }
+  function pointer(event){
+    const now=performance.now();if(now-lastTouch<140)return;lastTouch=now;const r=canvas.getBoundingClientRect(),x=(event.clientX-r.left-offsetX)/scale,y=(event.clientY-r.top-offsetY)/scale;
+    if(reduced)return;for(let i=0;i<12;i++)burst.push({x,y,angle:TAU*i/12,born:elapsed,v:18+rng()*30});
+  }
+  function mediaChange(e){reduced=e.matches;draw(performance.now());}
+  window.IslandScene={
+    init(element){
+      if(canvas)this.destroy();canvas=element||document.getElementById('island-canvas');if(!canvas)return;ctx=canvas.getContext('2d');if(!ctx){canvas=null;return;}
+      motionQuery=window.matchMedia('(prefers-reduced-motion: reduce)');reduced=motionQuery.matches;
+      if(motionQuery.addEventListener)motionQuery.addEventListener('change',mediaChange);
+      canvas.addEventListener('pointerdown',pointer,{passive:true});document.addEventListener('visibilitychange',visibility);window.addEventListener('resize',resize,{passive:true});
+      if(window.ResizeObserver){resizeObserver=new ResizeObserver(resize);resizeObserver.observe(canvas.parentElement);}
+      resize();start();
+    },
+    setWeather(value){weather=['clear','rain','snow'].includes(value)?value:'clear';bake();draw(performance.now());},
+    setTime(value){time=value==='dawn'?'dawn':'night';bake();draw(performance.now());},
+    setProgress(value){progress=Math.max(0,Number(value)||0);bake();draw(performance.now());},
+    setReducedMotion(value){reduced=Boolean(value);draw(performance.now());},
+    destroy(){stop();if(resizeObserver)resizeObserver.disconnect();resizeObserver=null;if(motionQuery&&motionQuery.removeEventListener)motionQuery.removeEventListener('change',mediaChange);document.removeEventListener('visibilitychange',visibility);window.removeEventListener('resize',resize);if(canvas)canvas.removeEventListener('pointerdown',pointer);canvas=null;ctx=null;art=null;burst=[];}
+  };
+})();
+
+</script>
+  <script>
+/* Island ambience: generated locally; no audio files or network requests. */
+(() => {
+  'use strict';
+  let context = null;
+  let master = null;
+  let volume = 0.42;
+  const active = new Map();
+  const ramps = new Set();
+
+  function ensureContext() {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) throw new Error('你的浏览器暂不支持环境声音。');
+    if (!context) {
+      context = new AudioContext();
+      master = context.createGain();
+      master.gain.value = volume;
+      master.connect(context.destination);
+    }
+    if (context.state === 'suspended') context.resume().catch(() => {});
+    return context;
+  }
+
+  function noiseBuffer(ctx, kind) {
+    const length = Math.floor(ctx.sampleRate * 4);
+    const buffer = ctx.createBuffer(2, length, ctx.sampleRate);
+    for (let channel = 0; channel < 2; channel += 1) {
+      const data = buffer.getChannelData(channel);
+      let brown = 0;
+      let slow = 0;
+      for (let i = 0; i < length; i += 1) {
+        const white = Math.random() * 2 - 1;
+        brown = (brown + 0.022 * white) / 1.022;
+        slow = slow * 0.998 + Math.random() * 0.002;
+        data[i] = kind === 'fire'
+          ? brown * 4.4 + (Math.random() > 0.9994 ? white * 0.55 : 0)
+          : kind === 'wind' ? brown * 5.2 * (0.45 + slow) : white * 0.42;
+      }
+    }
+    return buffer;
+  }
+
+  function createLayer(name) {
+    const ctx = ensureContext();
+    const source = ctx.createBufferSource();
+    const filter = ctx.createBiquadFilter();
+    const gain = ctx.createGain();
+    source.buffer = noiseBuffer(ctx, name);
+    source.loop = true;
+    filter.type = name === 'rain' ? 'lowpass' : 'lowpass';
+    filter.frequency.value = name === 'rain' ? 3800 : name === 'fire' ? 950 : 480;
+    filter.Q.value = 0.35;
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(name === 'rain' ? 0.65 : 0.58, ctx.currentTime + 0.65);
+    source.connect(filter);
+    filter.connect(gain);
+    gain.connect(master);
+    source.start();
+    let oscillator = null;
+    let modulation = null;
+    if (name === 'wind') {
+      oscillator = ctx.createOscillator();
+      modulation = ctx.createGain();
+      oscillator.frequency.value = 0.09;
+      modulation.gain.value = 160;
+      oscillator.connect(modulation);
+      modulation.connect(filter.frequency);
+      oscillator.start();
+    }
+    return { source, filter, gain, oscillator, modulation };
+  }
+
+  function stop(name, immediate = false) {
+    const layer = active.get(name);
+    if (!layer) return;
+    active.delete(name);
+    const dispose = () => {
+      try { layer.source.stop(); } catch (_) { /* Already stopped. */ }
+      if (layer.oscillator) { try { layer.oscillator.stop(); } catch (_) {} }
+      Object.values(layer).forEach(node => { if (node && node.disconnect) node.disconnect(); });
+    };
+    if (immediate || !context) { dispose(); return; }
+    layer.gain.gain.cancelScheduledValues(context.currentTime);
+    layer.gain.gain.setTargetAtTime(0, context.currentTime, 0.12);
+    const handle = window.setTimeout(() => { ramps.delete(handle); dispose(); }, 650);
+    ramps.add(handle);
+  }
+
+  window.IslandAudio = {
+    toggle(name) {
+      if (!['rain', 'fire', 'wind'].includes(name)) return false;
+      if (active.has(name)) { stop(name); return false; }
+      active.set(name, createLayer(name));
+      return true;
+    },
+    setVolume(value) {
+      volume = Math.max(0, Math.min(1, Number(value) || 0));
+      if (master && context) master.gain.setTargetAtTime(volume, context.currentTime, 0.08);
+    },
+    stopAll() { Array.from(active.keys()).forEach(name => stop(name)); },
+    getActive() { return Array.from(active.keys()); },
+    setMaster(enabled) { if (!enabled) this.stopAll(); },
+    dispose() {
+      Array.from(active.keys()).forEach(name => stop(name, true));
+      if (context) context.close().catch(() => {});
+      context = null;
+      master = null;
+    }
+  };
+})();
+
+</script>
+  <script>
+/* 未名岛 · private, offline, and yours. Everything stays in this browser. */
+(() => {
+  'use strict';
+  const KEY = 'weiming-island-v1';
+  const MAX_TEXT = 100000;
+  const $ = id => document.getElementById(id);
+  const $$ = selector => Array.from(document.querySelectorAll(selector));
+  const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
+  const uid = () => window.crypto && crypto.randomUUID ? crypto.randomUUID() : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+  const localDate = (date = new Date()) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  const shiftedDate = (key, offset) => { const date = new Date(`${key}T12:00:00`); date.setDate(date.getDate() + offset); return localDate(date); };
+  const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(new Date(`${value}T12:00:00`).getTime()) && localDate(new Date(`${value}T12:00:00`)) === value;
+  let state;
+  let journalDate = localDate();
+  let journalSave = null;
+  let toastTimeout = null;
+  let timerNotice = '每完成一次专注，岛上就多一份生机。';
+  let breathingFrame = null;
+  let storageWarned = false;
+  let storageHealthy = true;
+  let storageLocked = false;
+  let currentView = 'home';
+  let sceneProgress = null;
+  let renderedDay = localDate();
+  let lastStorageRaw = null;
+  let journalRemoteCopy = null;
+  let lastConflictRaw = null;
+  const defaults = () => ({
+    version: 1, name: '未名岛', duration: 25, breakDuration: 5,
+    weather: 'clear', night: true, volume: 0.42,
+    reducedMotion: Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches),
+    tasks: [], journals: {}, sessions: [],
+    timer: { mode: 'work', duration: 1500, remaining: 1500, deadline: null, running: false }
+  });
+
+  function sanitize(raw, strict = false) {
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw) || raw.version !== 1) throw new Error('文件版本不受支持。请选择本岛导出的备份。');
+    if (strict) validateBackupState(raw);
+    const clean = defaults();
+    clean.name = typeof raw.name === 'string' && raw.name.trim() ? raw.name.trim().slice(0, 18) : clean.name;
+    clean.duration = Number.isFinite(raw.duration) ? Math.round(clamp(raw.duration, 5, 120)) : 25;
+    clean.breakDuration = Number.isFinite(raw.breakDuration) ? Math.round(clamp(raw.breakDuration, 1, 60)) : 5;
+    clean.weather = ['clear', 'rain', 'snow'].includes(raw.weather) ? raw.weather : 'clear';
+    clean.night = raw.night === true;
+    clean.reducedMotion = typeof raw.reducedMotion === 'boolean' ? raw.reducedMotion : clean.reducedMotion;
+    clean.volume = Number.isFinite(raw.volume) ? clamp(raw.volume, 0, 1) : 0.42;
+    const taskIds = new Set();
+    clean.tasks = (Array.isArray(raw.tasks) ? raw.tasks : []).slice(0, 5000).filter(task => task && typeof task.text === 'string' && task.text.trim()).map(task => {
+      let id = typeof task.id === 'string' && task.id.length <= 100 ? task.id : uid();
+      if (taskIds.has(id)) id = uid();
+      taskIds.add(id);
+      return { id, text: task.text.slice(0, 240), done: task.done === true, createdAt: Number.isFinite(task.createdAt) ? task.createdAt : Date.now() };
+    });
+    clean.journals = {};
+    if (raw.journals && typeof raw.journals === 'object' && !Array.isArray(raw.journals)) {
+      Object.entries(raw.journals).slice(0, 10000).forEach(([date, value]) => { if (validDate(date) && typeof value === 'string') clean.journals[date] = value.slice(0, MAX_TEXT); });
+    }
+    const sessionIds = new Set();
+    clean.sessions = (Array.isArray(raw.sessions) ? raw.sessions : []).slice(-100000).filter(item => item && validDate(item.date) && Number.isFinite(item.minutes) && item.minutes > 0 && item.minutes <= 120).map(item => {
+      let id = typeof item.id === 'string' && item.id.length <= 100 ? item.id : uid();
+      if (sessionIds.has(id)) return null;
+      sessionIds.add(id);
+      return { id, date: item.date, at: Number.isFinite(item.at) ? item.at : new Date(`${item.date}T12:00:00`).getTime(), minutes: Math.round(item.minutes * 10) / 10 };
+    }).filter(Boolean);
+    if (raw.timer && typeof raw.timer === 'object') {
+      const source = raw.timer;
+      const mode = source.mode === 'break' ? 'break' : 'work';
+      const duration = Number.isFinite(source.duration) ? Math.round(clamp(source.duration, 1, 7200)) : (mode === 'work' ? clean.duration : clean.breakDuration) * 60;
+      const running = source.running === true && Number.isFinite(source.deadline) && source.deadline > 0 && source.deadline < Date.now() + 7201 * 1000;
+      clean.timer = { mode, duration, remaining: Number.isFinite(source.remaining) ? clamp(source.remaining, 0, duration) : duration, running, deadline: running ? source.deadline : null };
+    }
+    return clean;
+  }
+
+  function validateBackupState(raw) {
+    const fail = () => { throw new Error('备份结构或数值不完整，原来的岛没有改变。'); };
+    if (typeof raw.name !== 'string' || !raw.name.trim() || raw.name.length > 18 ||
+        !Number.isInteger(raw.duration) || raw.duration < 5 || raw.duration > 120 ||
+        !Number.isInteger(raw.breakDuration) || raw.breakDuration < 1 || raw.breakDuration > 60 ||
+        !['clear', 'rain', 'snow'].includes(raw.weather) || typeof raw.night !== 'boolean' ||
+        !Number.isFinite(raw.volume) || raw.volume < 0 || raw.volume > 1 ||
+        !Array.isArray(raw.tasks) || raw.tasks.length > 5000 ||
+        !Array.isArray(raw.sessions) || raw.sessions.length > 100000 ||
+        !raw.journals || typeof raw.journals !== 'object' || Array.isArray(raw.journals) ||
+        !raw.timer || typeof raw.timer !== 'object' || Array.isArray(raw.timer)) fail();
+    if (raw.reducedMotion !== undefined && typeof raw.reducedMotion !== 'boolean') fail();
+    const ids = new Set();
+    raw.tasks.forEach(task => {
+      if (!task || typeof task.id !== 'string' || !task.id || task.id.length > 100 || ids.has(task.id) ||
+          typeof task.text !== 'string' || !task.text.trim() || task.text.length > 240 ||
+          typeof task.done !== 'boolean' || !Number.isFinite(task.createdAt)) fail();
+      ids.add(task.id);
+    });
+    const journals = Object.entries(raw.journals);
+    if (journals.length > 10000 || journals.some(([date, value]) => !validDate(date) || typeof value !== 'string' || value.length > MAX_TEXT)) fail();
+    ids.clear();
+    raw.sessions.forEach(session => {
+      if (!session || typeof session.id !== 'string' || !session.id || session.id.length > 100 || ids.has(session.id) ||
+          !validDate(session.date) || !Number.isFinite(session.at) || !Number.isFinite(session.minutes) || session.minutes <= 0 || session.minutes > 120) fail();
+      ids.add(session.id);
+    });
+    const timer = raw.timer;
+    if (!['work', 'break'].includes(timer.mode) || !Number.isInteger(timer.duration) || timer.duration < 1 || timer.duration > 7200 ||
+        !Number.isFinite(timer.remaining) || timer.remaining < 0 || timer.remaining > timer.duration || typeof timer.running !== 'boolean' ||
+        (timer.running ? !Number.isFinite(timer.deadline) || timer.deadline <= 0 || timer.deadline > Date.now() + 7201000 : timer.deadline !== null)) fail();
+  }
+
+  function toast(message, undo) {
+    const node = $('toast');
+    if (!node) return;
+    window.clearTimeout(toastTimeout);
+    node.textContent = message;
+    if (undo) {
+      const action = document.createElement('button');
+      action.type = 'button'; action.textContent = '撤销删除';
+      action.addEventListener('click', () => { undo(); node.hidden = true; window.clearTimeout(toastTimeout); }, { once: true });
+      node.append(action);
+    }
+    node.classList.add('visible');
+    node.hidden = false;
+    toastTimeout = window.setTimeout(() => { node.classList.remove('visible'); node.hidden = true; }, undo ? 8000 : 3800);
+  }
+
+  function persist() {
+    try {
+      if (storageLocked) throw new Error('recovery storage unavailable');
+      const raw = JSON.stringify(state);
+      localStorage.setItem(KEY, raw);
+      lastStorageRaw = raw;
+      storageHealthy = true;
+      if ($('storage-status')) $('storage-status').textContent = '已保存在此浏览器';
+      return true;
+    } catch (_) {
+      storageHealthy = false;
+      if (!storageWarned) { toast(storageLocked ? '原存档无法安全备份，已暂停写入。请先导出当前记录。' : '浏览器存储不可用或已满。请导出备份，避免丢失。'); storageWarned = true; }
+      if ($('storage-status')) $('storage-status').textContent = '尚未保存，请导出备份';
+      return false;
+    }
+  }
+
+  function load() {
+    let saved = null;
+    try {
+      saved = localStorage.getItem(KEY);
+      lastStorageRaw = saved;
+      return saved ? sanitize(JSON.parse(saved)) : defaults();
+    } catch (_) {
+      storageHealthy = false;
+      let recovered = false;
+      if (saved) {
+        try { localStorage.setItem(`${KEY}-recovery-${Date.now()}`, saved); recovered = true; }
+        catch (_) { storageLocked = true; }
+      }
+      window.setTimeout(() => toast(recovered ? '原存档格式异常，原始内容已另存本地恢复副本。已打开一座新岛。' : storageLocked ? '原存档异常且无法备份，已暂停写入。请先导出当前记录。' : '浏览器存档无法读取。新记录请及时导出备份。'), 500);
+      return defaults();
+    }
+  }
+
+  function remainingSeconds() {
+    return clamp(state.timer.running ? Math.ceil((state.timer.deadline - Date.now()) / 1000) : Math.ceil(state.timer.remaining), 0, state.timer.duration);
+  }
+
+  function renderTimer() {
+    const remaining = remainingSeconds();
+    if ($('timer-display')) $('timer-display').textContent = `${String(Math.floor(remaining / 60)).padStart(2, '0')}:${String(remaining % 60).padStart(2, '0')}`;
+    if ($('timer-label')) $('timer-label').textContent = state.timer.mode === 'work' ? '把这一刻，留给一件事' : '休息一下，让风经过';
+    if ($('timer-toggle')) {
+      $('timer-toggle').textContent = state.timer.running ? '暂停片刻' : remaining < state.timer.duration ? (state.timer.mode === 'work' ? '继续专注' : '继续休息') : state.timer.mode === 'work' ? '开始专注' : '开始休息';
+      $('timer-toggle').setAttribute('aria-label', state.timer.running ? '暂停计时' : '开始计时');
+    }
+    if ($('timer-notice')) { $('timer-notice').textContent = timerNotice; $('timer-notice').hidden = !timerNotice; }
+    ['work', 'break'].forEach(mode => {
+      const button = $(`timer-${mode}`);
+      if (button) { button.classList.toggle('active', state.timer.mode === mode); button.setAttribute('aria-pressed', String(state.timer.mode === mode)); }
+    });
+    $$('#timer-presets [data-minutes]').forEach(button => {
+      const selected = state.timer.mode === 'work' && Number(button.dataset.minutes) * 60 === state.timer.duration;
+      button.classList.toggle('active', selected); button.setAttribute('aria-pressed', String(selected));
+    });
+    const progress = $('timer-progress');
+    if (progress) {
+      const fraction = state.timer.duration ? (state.timer.duration - remaining) / state.timer.duration : 0;
+      if (progress.tagName.toLowerCase() === 'circle') {
+        const length = 2 * Math.PI * Number(progress.getAttribute('r'));
+        progress.style.strokeDasharray = `${length}`;
+        progress.style.strokeDashoffset = `${length * (1 - fraction)}`;
+      } else progress.style.setProperty('--progress', `${fraction * 100}%`);
+    }
+    document.title = `${state.timer.running ? `${String(Math.floor(remaining / 60)).padStart(2, '0')}:${String(remaining % 60).padStart(2, '0')} · ` : ''}${state.name}`;
+  }
+
+  function completeTimer() {
+    // A different page may have paused, reset, or already completed this timer.
+    if (storageHealthy && !storageLocked) {
+      const shared = readSharedState();
+      if (shared) {
+        const local = state.timer;
+        const remote = shared.state.timer;
+        const sameTimer = local.mode === remote.mode && local.running === remote.running && local.deadline === remote.deadline && local.duration === remote.duration;
+        if (shared.raw !== lastStorageRaw) receiveSharedState(shared.state, shared.raw);
+        if (!sameTimer) return;
+      }
+    }
+    const finished = state.timer;
+    if (finished.mode === 'work') {
+      const at = finished.deadline || Date.now();
+      const id = `focus-${Math.round(at)}-${finished.duration}`;
+      if (!state.sessions.some(session => session.id === id)) state.sessions.push({ id, date: localDate(new Date(at)), at, minutes: Math.round(finished.duration / 6) / 10 });
+      timerNotice = '这一段专注，已经留在岛上。准备好再开始休息。';
+      state.timer = { mode: 'break', duration: state.breakDuration * 60, remaining: state.breakDuration * 60, running: false, deadline: null };
+    } else {
+      timerNotice = '休息结束了。下一件事，慢慢来。';
+      state.timer = { mode: 'work', duration: state.duration * 60, remaining: state.duration * 60, running: false, deadline: null };
+    }
+    persist(); renderTimer(); renderStats(); toast(finished.mode === 'work' ? '又一段专注，抵达了。' : '休息好了，随时出发。');
+  }
+
+  function tick() {
+    if (state.timer.running && remainingSeconds() <= 0) completeTimer();
+    else renderTimer();
+    const today = localDate();
+    if (today !== renderedDay) {
+      const previous = renderedDay; renderedDay = today;
+      flushJournal();
+      if (journalDate === previous && document.activeElement !== $('journal-input')) { journalDate = today; renderJournal(); }
+      if ($('journal-date')) $('journal-date').max = today;
+      if ($('journal-next')) $('journal-next').disabled = journalDate >= today;
+      renderStats(); renderPreview(); renderName();
+    }
+    if ($('current-date')) $('current-date').textContent = new Intl.DateTimeFormat('zh-CN', { month: 'long', day: 'numeric', weekday: 'long' }).format(new Date());
+  }
+
+  function toggleTimer() {
+    if (state.timer.running && remainingSeconds() <= 0) { completeTimer(); return; }
+    if (state.timer.running) { state.timer.remaining = remainingSeconds(); state.timer.running = false; state.timer.deadline = null; }
+    else {
+      if (state.timer.remaining <= 0) state.timer.remaining = state.timer.duration;
+      state.timer.deadline = Date.now() + state.timer.remaining * 1000; state.timer.running = true; timerNotice = '';
+    }
+    persist(); renderTimer();
+  }
+
+  function switchTimer(mode, minutes) {
+    if (state.timer.running && remainingSeconds() <= 0) completeTimer();
+    state.timer = { mode, duration: minutes * 60, remaining: minutes * 60, deadline: null, running: false };
+    timerNotice = ''; persist(); renderTimer();
+  }
+
+  function renderTasks(focusId) {
+    const list = $('task-list');
+    if (!list) return;
+    list.replaceChildren();
+    state.tasks.forEach(task => {
+      const row = document.createElement('li'); row.className = `task-item${task.done ? ' completed' : ''}`;
+      const label = document.createElement('label'); label.className = 'task-label';
+      const check = document.createElement('input'); check.type = 'checkbox'; check.className = 'task-check'; check.checked = task.done;
+      check.setAttribute('aria-label', `${task.done ? '取消完成' : '完成'}：${task.text}`);
+      check.addEventListener('change', () => {
+        task.done = check.checked; persist();
+        row.classList.toggle('completed', task.done);
+        check.setAttribute('aria-label', `${task.done ? '取消完成' : '完成'}：${task.text}`);
+        renderTaskCount();
+      });
+      const text = document.createElement('span'); text.className = 'task-text'; text.textContent = task.text;
+      const remove = document.createElement('button'); remove.type = 'button'; remove.className = 'task-delete'; remove.textContent = '×'; remove.title = '删除这件事'; remove.setAttribute('aria-label', `删除：${task.text}`);
+      remove.addEventListener('click', () => {
+        const position = state.tasks.findIndex(item => item.id === task.id);
+        state.tasks = state.tasks.filter(item => item.id !== task.id); persist(); renderTasks();
+        if ($('task-input')) $('task-input').focus();
+        toast('这件小事已经移走。', () => {
+          if (!state.tasks.some(item => item.id === task.id)) state.tasks.splice(Math.max(0, position), 0, task);
+          persist(); renderTasks(task.id);
+        });
+      });
+      label.append(check, text); row.append(label, remove); list.append(row);
+      if (focusId === task.id) check.focus();
+    });
+    renderTaskCount();
+    if ($('task-empty')) $('task-empty').hidden = state.tasks.length > 0;
+  }
+
+  function renderTaskCount() {
+    const pending = state.tasks.filter(task => !task.done).length;
+    if ($('task-count')) $('task-count').textContent = state.tasks.length ? `${pending} 件待办 · ${state.tasks.length - pending} 件完成` : '0 件';
+  }
+
+  function renderJournal() {
+    journalRemoteCopy = null;
+    if ($('journal-date')) { $('journal-date').value = journalDate; $('journal-date').max = localDate(); }
+    if ($('journal-input')) $('journal-input').value = state.journals[journalDate] || '';
+    if ($('journal-status')) $('journal-status').textContent = state.journals[journalDate] ? journalSave ? '正在保存…' : journalSavedLabel() : '写下来的，都会被好好收着';
+    if ($('journal-next')) $('journal-next').disabled = journalDate >= localDate();
+    renderPreview();
+  }
+
+  function renderPreview() {
+    if (!$('journal-preview')) return;
+    const today = state.journals[localDate()] || '';
+    $('journal-preview').textContent = today.trim() ? today.trim().slice(0, 85) + (today.trim().length > 85 ? '…' : '') : '今天有什么值得留住的？哪怕只是一阵风。';
+  }
+
+  function flushJournal() {
+    if (!journalSave) return;
+    window.clearTimeout(journalSave); journalSave = null;
+    const success = persist();
+    if ($('journal-status')) $('journal-status').textContent = success ? journalSavedLabel() : '存储失败，请导出备份';
+    renderPreview(); renderStats();
+  }
+
+  function journalSavedLabel() {
+    if (!storageHealthy) return '尚未保存，请导出备份';
+    const length = (state.journals[journalDate] || '').length;
+    return length >= MAX_TEXT ? '已保存 · 已达 100000 字符上限' : length >= MAX_TEXT - 1000 ? '已保存 · 接近 100000 字符上限' : '已保存在此浏览器';
+  }
+
+  function readSharedState(fallbackRaw) {
+    try {
+      const raw = localStorage.getItem(KEY) || fallbackRaw;
+      if (!raw) return null;
+      return { raw, state: sanitize(JSON.parse(raw), true) };
+    } catch (_) { return null; }
+  }
+
+  function preserveJournalVersion(raw) {
+    if (!raw || raw === lastConflictRaw) return;
+    try {
+      let key = `${KEY}-recovery-${Date.now()}`;
+      while (localStorage.getItem(key) !== null) key += '-copy';
+      localStorage.setItem(key, raw);
+      lastConflictRaw = raw;
+      toast('另一页面也更新了这一天。已保留本页草稿，另一版本已存为恢复副本。');
+    } catch (_) {
+      storageLocked = true; storageHealthy = false;
+      toast('另一页面更新了手记，但恢复副本无法写入。已暂停保存，请先导出本页备份。');
+    }
+  }
+
+  function receiveSharedState(incoming, raw, render = true) {
+    const editor = $('journal-input');
+    const editing = editor && document.activeElement === editor;
+    const dirty = journalSave !== null;
+    const localText = dirty && editor ? editor.value : state.journals[journalDate] || '';
+    const remoteText = incoming.journals[journalDate] || '';
+    if (state.timer.mode !== incoming.timer.mode || state.timer.deadline !== incoming.timer.deadline) timerNotice = '';
+    if (dirty && localText !== remoteText) preserveJournalVersion(raw);
+    state = incoming;
+    lastStorageRaw = raw;
+    if (dirty) {
+      if (localText) state.journals[journalDate] = localText;
+      else delete state.journals[journalDate];
+    } else if (editing && editor.value !== remoteText) {
+      // Keep the caret and visible text still. If typing continues, archive the
+      // remote version before accepting the next local edit; otherwise blur
+      // shows the latest version without issuing a write.
+      journalRemoteCopy = raw;
+      if ($('journal-status')) $('journal-status').textContent = '另一页面已更新 · 离开编辑区后显示';
+    } else journalRemoteCopy = null;
+    if (!render) return;
+    renderName(); renderTimer(); renderTasks(); renderStats(); updateEnvironment(); renderPreview();
+    if (!editing) renderJournal();
+    if ($('sound-volume') && document.activeElement !== $('sound-volume')) $('sound-volume').value = `${Math.round(state.volume * 100)}`;
+    if (window.IslandAudio) window.IslandAudio.setVolume(state.volume);
+    if ($('storage-status')) $('storage-status').textContent = storageHealthy ? '已同步另一页面' : '尚未保存，请导出备份';
+  }
+
+  function onStorage(event) {
+    if (event.key !== KEY || (event.storageArea && event.storageArea !== localStorage)) return;
+    const shared = readSharedState(event.newValue);
+    if (!shared || shared.raw === lastStorageRaw) return;
+    receiveSharedState(shared.state, shared.raw);
+  }
+
+  function selectJournal(date) {
+    if (!validDate(date) || date > localDate()) { toast('请选择今天或更早的一天。'); renderJournal(); return; }
+    flushJournal(); journalDate = date; renderJournal();
+  }
+
+  function renderStats() {
+    const today = localDate();
+    const byDay = new Map();
+    state.sessions.forEach(session => byDay.set(session.date, (byDay.get(session.date) || 0) + session.minutes));
+    const todaySessions = state.sessions.filter(session => session.date === today);
+    if ($('stat-minutes')) $('stat-minutes').textContent = `${Math.round(todaySessions.reduce((sum, session) => sum + session.minutes, 0))}`;
+    if ($('stat-sessions')) $('stat-sessions').textContent = `${state.sessions.length}`;
+    let streak = 0;
+    let cursor = byDay.has(today) ? today : shiftedDate(today, -1);
+    while (byDay.has(cursor)) { streak += 1; cursor = shiftedDate(cursor, -1); }
+    if ($('stat-streak')) $('stat-streak').textContent = `${streak}`;
+    if (sceneProgress !== state.sessions.length && window.IslandScene && typeof window.IslandScene.setProgress === 'function') {
+      sceneProgress = state.sessions.length;
+      window.IslandScene.setProgress(sceneProgress);
+    }
+    if ($('week-chart')) {
+      const days = Array.from({ length: 7 }, (_, index) => shiftedDate(today, index - 6));
+      const max = Math.max(30, ...days.map(day => byDay.get(day) || 0));
+      $('week-chart').replaceChildren();
+      days.forEach(day => {
+        const column = document.createElement('div'); column.className = `week-column${day === today ? ' today' : ''}`;
+        const minutes = byDay.get(day) || 0;
+        column.title = `${day}：${Math.round(minutes)} 分钟`;
+        const bar = document.createElement('span'); bar.className = 'week-bar'; bar.style.height = `${minutes ? Math.max(5, minutes / max * 100) : 3}%`; bar.setAttribute('aria-label', column.title);
+        const label = document.createElement('span'); label.className = 'week-day'; label.textContent = day === today ? '今' : ['日', '一', '二', '三', '四', '五', '六'][new Date(`${day}T12:00:00`).getDay()];
+        column.append(bar, label); $('week-chart').append(column);
+      });
+      $('week-chart').setAttribute('aria-label', `近 7 天共专注 ${Math.round(days.reduce((sum, day) => sum + (byDay.get(day) || 0), 0))} 分钟`);
+    }
+    if ($('heatmap')) {
+      $('heatmap').replaceChildren();
+      for (let index = 0; index < 35; index += 1) {
+        const day = shiftedDate(today, index - 34);
+        const minutes = byDay.get(day) || 0;
+        const cell = document.createElement('span'); cell.className = 'heat-cell';
+        cell.dataset.level = `${minutes >= 100 ? 4 : minutes >= 60 ? 3 : minutes >= 25 ? 2 : minutes > 0 ? 1 : 0}`;
+        cell.title = `${day} · ${Math.round(minutes)} 分钟${state.journals[day] ? ' · 写过日记' : ''}`;
+        cell.setAttribute('aria-label', cell.title);
+        $('heatmap').append(cell);
+      }
+    }
+  }
+
+  function updateEnvironment() {
+    document.body.dataset.weather = state.weather;
+    document.body.classList.toggle('is-night', state.night);
+    document.body.classList.toggle('reduced-motion', state.reducedMotion);
+    document.documentElement.dataset.time = state.night ? 'night' : 'day';
+    $$('[data-weather]').forEach(button => { const selected = button.dataset.weather === state.weather; button.classList.toggle('active', selected); button.setAttribute('aria-pressed', String(selected)); });
+    if ($('time-toggle')) {
+      const button = $('time-toggle');
+      const title = state.night ? '切换到黎明' : '切换到夜晚';
+      button.setAttribute('aria-pressed', String(state.night)); button.setAttribute('aria-label', title); button.title = title;
+      const label = Array.from(button.childNodes).find(node => node.nodeType === 3);
+      if (label) label.nodeValue = state.night ? '夜色正好' : '晨光刚好';
+      else button.prepend(document.createTextNode(state.night ? '夜色正好' : '晨光刚好'));
+    }
+    window.dispatchEvent(new CustomEvent('island:weather', { detail: { weather: state.weather } }));
+    window.dispatchEvent(new CustomEvent('island:time', { detail: { night: state.night } }));
+    if (window.IslandScene && typeof window.IslandScene.setWeather === 'function') window.IslandScene.setWeather(state.weather);
+    if (window.IslandScene && typeof window.IslandScene.setTime === 'function') window.IslandScene.setTime(state.night ? 'night' : 'dawn');
+    if (window.IslandScene && typeof window.IslandScene.setReducedMotion === 'function') window.IslandScene.setReducedMotion(state.reducedMotion);
+  }
+
+  function renderName() {
+    if ($('island-name')) $('island-name').textContent = state.name;
+    if ($('greeting')) { const hour = new Date().getHours(); $('greeting').textContent = hour < 6 ? '夜深了，岛还亮着灯' : hour < 11 ? '早安，今天也从容一点' : hour < 17 ? '午后好，给自己一小段留白' : '晚上好，欢迎回到岛上'; }
+  }
+
+  function switchView(view) {
+    if (!['home', 'journal', 'tools'].includes(view)) return;
+    flushJournal(); currentView = view;
+    ['home', 'journal', 'tools'].forEach(name => { const section = $(`view-${name}`); if (section) section.hidden = name !== view; });
+    $$('[data-view]').forEach(button => { const selected = button.dataset.view === view; button.classList.toggle('active', selected); if (button.closest('nav')) { if (selected) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); button.title = `${{ home: '岛上', journal: '手记', tools: '工具' }[button.dataset.view]}${selected ? ' · 当前页面' : ''}`; } });
+    if (view === 'journal') renderJournal();
+    if (view === 'tools') updateTool();
+  }
+
+  function showDialog(id) {
+    const dialog = $(id);
+    if (!dialog) return;
+    if (id === 'settings-dialog') { $('settings-name').value = state.name; $('settings-duration').value = state.duration; if ($('settings-motion')) $('settings-motion').checked = state.reducedMotion; updateRecoveryButton(); }
+    if (typeof dialog.showModal === 'function') { if (!dialog.open) dialog.showModal(); }
+    else { dialog.setAttribute('open', ''); dialog.hidden = false; }
+    if (id === 'breathe-dialog') startBreathing();
+  }
+
+  function closeDialog(dialog) {
+    if (!dialog) return;
+    if (typeof dialog.close === 'function') dialog.close(); else { dialog.removeAttribute('open'); dialog.hidden = true; }
+    if (dialog.id === 'breathe-dialog') stopBreathing();
+  }
+
+  function download(name, text, mime) {
+    const blob = new Blob([text], { type: mime });
+    const link = document.createElement('a'); const url = URL.createObjectURL(blob);
+    link.href = url; link.download = name; document.body.append(link); link.click(); link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1500);
+  }
+
+  function backup() {
+    flushJournal();
+    if (state.timer.running && remainingSeconds() <= 0) completeTimer();
+    const snapshot = JSON.parse(JSON.stringify(state));
+    snapshot.timer.remaining = remainingSeconds(); snapshot.timer.running = false; snapshot.timer.deadline = null;
+    download(`未名岛-备份-${localDate()}.json`, JSON.stringify({ schema: 'weiming-island', version: 1, exportedAt: new Date().toISOString(), state: snapshot }, null, 2), 'application/json;charset=utf-8');
+    toast('备份已导出，记得把它收好。');
+  }
+
+  async function importBackup(file) {
+    if (!file) return;
+    if (file.size > 12 * 1024 * 1024) { toast('这个备份太大了，请选择小于 12 MB 的文件。'); return; }
+    try {
+      const parsed = JSON.parse(await file.text());
+      if (parsed.schema !== 'weiming-island' || parsed.version !== 1) throw new Error('这不是未名岛支持的备份文件。');
+      const imported = sanitize(parsed.state, true);
+      if (!window.confirm(`导入将替换这座岛的日记、待办和专注记录。\n备份包含 ${imported.tasks.length} 件待办、${Object.keys(imported.journals).length} 篇日记、${imported.sessions.length} 次专注。\n建议先导出当前备份。确定替换吗？`)) return;
+      flushJournal();
+      imported.timer.running = false; imported.timer.deadline = null;
+      try {
+        localStorage.setItem(`${KEY}-before-import`, JSON.stringify(state));
+        localStorage.setItem(KEY, JSON.stringify(imported));
+      } catch (_) { throw new Error('没有足够存储空间安全导入。请先导出当前备份，再清理浏览器空间。'); }
+      state = imported; timerNotice = ''; storageHealthy = true; storageLocked = false; storageWarned = false;
+      renderAll(); toast('备份已抵达，导入前的存档也已在本地保留。');
+      return true;
+    } catch (error) { toast(error instanceof SyntaxError ? '文件不是有效的 JSON，原来的岛没有改变。' : error.message || '备份无法读取，原来的岛没有改变。'); }
+    return false;
+  }
+
+  function recoveryEntries() {
+    const entries = [];
+    try {
+      for (let index = 0; index < localStorage.length; index += 1) {
+        const key = localStorage.key(index);
+        if (key !== `${KEY}-before-import` && !key.startsWith(`${KEY}-recovery-`)) continue;
+        const raw = localStorage.getItem(key);
+        const stamp = Number((key.match(/recovery-(\d+)/) || [])[1]) || 0;
+        let snapshot = null;
+        try { snapshot = sanitize(JSON.parse(raw), true); } catch (_) { /* The original bytes can still be exported. */ }
+        entries.push({ key, raw, snapshot, stamp });
+      }
+    } catch (_) { /* Storage can be unavailable in private browser policies. */ }
+    return entries.sort((a, b) => b.stamp - a.stamp);
+  }
+
+  function updateRecoveryButton() {
+    let button = $('data-recovery');
+    if (!button) {
+      const area = document.querySelector('.backup-area');
+      if (!area) return;
+      button = document.createElement('button'); button.id = 'data-recovery';
+      button.type = 'button'; button.className = 'text-button recovery-link'; button.textContent = '找回之前的版本 ↗';
+      button.addEventListener('click', showRecoveries); area.append(button);
+    }
+    button.hidden = !recoveryEntries().length;
+  }
+
+  function showRecoveries() {
+    const list = $('recovery-list');
+    if (!list) return;
+    list.replaceChildren();
+    recoveryEntries().forEach(entry => {
+      const row = document.createElement('div'); row.className = 'recovery-row';
+      const copy = document.createElement('div');
+      const title = document.createElement('strong');
+      title.textContent = entry.stamp ? new Intl.DateTimeFormat('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(entry.stamp)) : '上次导入之前';
+      const description = document.createElement('p');
+      description.textContent = entry.snapshot ? `${entry.snapshot.tasks.length} 件小事 · ${Object.keys(entry.snapshot.journals).length} 篇手记 · ${entry.snapshot.sessions.length} 次专注` : '原始存档 · 可导出后检查内容';
+      copy.append(title, description);
+      const actions = document.createElement('div'); actions.className = 'recovery-row-actions';
+      const pack = () => {
+        const snapshot = JSON.parse(JSON.stringify(entry.snapshot));
+        if (snapshot.timer.running) snapshot.timer.remaining = clamp(Math.ceil((snapshot.timer.deadline - Date.now()) / 1000), 0, snapshot.timer.duration);
+        snapshot.timer.running = false; snapshot.timer.deadline = null;
+        return JSON.stringify({ schema: 'weiming-island', version: 1, exportedAt: new Date().toISOString(), state: snapshot }, null, 2);
+      };
+      const exportButton = document.createElement('button'); exportButton.type = 'button'; exportButton.className = 'outline-button'; exportButton.textContent = '导出';
+      exportButton.setAttribute('aria-label', `导出${title.textContent}的恢复副本`);
+      exportButton.addEventListener('click', () => download(`未名岛-恢复副本-${entry.stamp || '导入前'}.json`, entry.snapshot ? pack() : entry.raw, 'application/json;charset=utf-8'));
+      actions.append(exportButton);
+      if (entry.snapshot) {
+        const restore = document.createElement('button'); restore.type = 'button'; restore.className = 'outline-button'; restore.textContent = '恢复';
+        restore.setAttribute('aria-label', `恢复${title.textContent}的记录`);
+        restore.addEventListener('click', async () => {
+          const file = new File([pack()], 'recovery.json', { type: 'application/json' });
+          if (await importBackup(file)) { closeDialog($('recovery-dialog')); closeDialog($('settings-dialog')); }
+        });
+        actions.append(restore);
+      }
+      row.append(copy, actions); list.append(row);
+    });
+    if (!list.childElementCount) { list.textContent = '暂时没有旧版本。日常记录可以随时导出备份。'; }
+    showDialog('recovery-dialog');
+  }
+
+  function exportJournals() {
+    flushJournal();
+    const entries = Object.entries(state.journals).filter(([, value]) => value.trim()).sort(([a], [b]) => b.localeCompare(a));
+    if (!entries.length) { toast('写下第一句话，再把它带走吧。'); return; }
+    download(`岛上手记-${localDate()}.md`, `# ${state.name} · 岛上手记\n\n` + entries.map(([date, text]) => `## ${date}\n\n${text}\n`).join('\n---\n\n'), 'text/markdown;charset=utf-8');
+    toast('所有手记已导出为 Markdown。');
+  }
+
+  function updateSoundUI() {
+    const active = window.IslandAudio ? window.IslandAudio.getActive() : [];
+    $$('[data-sound]').forEach(button => { const enabled = active.includes(button.dataset.sound); button.classList.toggle('active', enabled); button.setAttribute('aria-pressed', String(enabled)); });
+    if ($('sound-toggle')) { $('sound-toggle').classList.toggle('playing', active.length > 0); $('sound-toggle').setAttribute('aria-label', active.length ? `环境声正在播放：${active.length} 种，打开声音设置` : '打开环境声音设置'); }
+  }
+
+  const toolConfig = {
+    text: ['字数统计', '清空', '把文字放在这里，看看它有多长。'],
+    json: ['格式化', '压缩', '在这里粘贴 JSON。格式化同时会检查语法。'],
+    base64: ['编码', '解码', '支持中文与其他 Unicode 字符的 Base64 转换。'],
+    url: ['编码', '解码', '对 URL 参数进行编码或解码。'],
+    choose: ['帮我选一个', '清空', '每行放一个选项，让岛上的风替你选。']
+  };
+
+  function updateTool() {
+    const kind = $('tool-select') ? $('tool-select').value : 'text';
+    const config = toolConfig[kind] || toolConfig.text;
+    if ($('tool-primary')) $('tool-primary').textContent = config[0];
+    if ($('tool-secondary')) $('tool-secondary').textContent = config[1];
+    if ($('tool-hint')) $('tool-hint').textContent = config[2];
+    if ($('tool-input')) $('tool-input').placeholder = config[2];
+    if ($('tool-output')) { $('tool-output').textContent = ''; $('tool-output').classList.remove('error'); }
+  }
+
+  function formatJSON(input, compact) {
+    // Validate the grammar, then format original tokens. Numeric lexemes, key
+    // order, duplicate keys and escape sequences remain exactly as supplied.
+    JSON.parse(input);
+    const tokens = input.match(/"(?:\\.|[^"\\])*"|[{}\[\],:]|true|false|null|-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?/g) || [];
+    if (compact) return tokens.join('');
+    let depth = 0;
+    let result = '';
+    const newline = () => { if (depth > 120) throw new Error('JSON 嵌套超过 120 层，请先缩小处理范围。'); result += '\n' + '  '.repeat(depth); };
+    tokens.forEach((token, index) => {
+      if (token === '{' || token === '[') {
+        result += token; depth += 1;
+        if (!((token === '{' && tokens[index + 1] === '}') || (token === '[' && tokens[index + 1] === ']'))) newline();
+      } else if (token === '}' || token === ']') {
+        depth -= 1;
+        if (!((token === '}' && tokens[index - 1] === '{') || (token === ']' && tokens[index - 1] === '['))) newline();
+        result += token;
+      } else if (token === ',') { result += token; newline(); }
+      else result += token === ':' ? ': ' : token;
+    });
+    return result;
+  }
+
+  function runTool(secondary = false) {
+    if (!$('tool-select') || !$('tool-input') || !$('tool-output')) return;
+    const kind = $('tool-select').value;
+    const input = $('tool-input').value;
+    const output = $('tool-output'); output.classList.remove('error');
+    try {
+      let result = '';
+      if ((kind === 'text' || kind === 'choose') && secondary) { $('tool-input').value = ''; output.textContent = ''; return; }
+      if (kind === 'text') {
+        const chars = Array.from(input);
+        const han = (input.match(/\p{Script=Han}/gu) || []).length;
+        const latin = (input.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g) || []).length;
+        const words = han + latin;
+        result = `字符（含空白）  ${chars.length}\n字符（不含空白）  ${Array.from(input.replace(/\s/gu, '')).length}\n中文字  ${han}\n英文单词 / 数字组  ${latin}\n行数  ${input ? input.split(/\r?\n/).length : 0}\n预计阅读  ${words ? Math.max(1, Math.ceil(words / 300)) : 0} 分钟`;
+      } else if (kind === 'json') result = formatJSON(input, secondary);
+      else if (kind === 'base64') {
+        if (secondary) {
+          const binary = atob(input.replace(/\s/g, ''));
+          result = new TextDecoder('utf-8', { fatal: true, ignoreBOM: true }).decode(Uint8Array.from(binary, char => char.charCodeAt(0)));
+        } else {
+          const bytes = new TextEncoder().encode(input);
+          let binary = ''; for (let index = 0; index < bytes.length; index += 8192) binary += String.fromCharCode(...bytes.subarray(index, index + 8192));
+          result = btoa(binary);
+        }
+      } else if (kind === 'url') result = secondary ? decodeURIComponent(input) : encodeURIComponent(input);
+      else if (kind === 'choose') {
+        const options = input.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+        if (!options.length) throw new Error('先写下至少一个选项，每行一个。');
+        const random = new Uint32Array(1); let index;
+        if (window.crypto && crypto.getRandomValues) {
+          const limit = Math.floor(4294967296 / options.length) * options.length;
+          do { crypto.getRandomValues(random); } while (random[0] >= limit);
+          index = random[0] % options.length;
+        } else index = Math.floor(Math.random() * options.length);
+        result = `风替你选了：\n\n${options[index]}`;
+      }
+      output.textContent = result;
+    } catch (error) {
+      output.classList.add('error');
+      output.textContent = kind === 'base64' ? '无法解码：请检查 Base64 是否完整，以及内容是否为 UTF-8 文字。' : kind === 'url' ? '无法解码：URL 编码格式不完整。' : `还差一点：${error.message}`;
+    }
+  }
+
+  async function copyOutput() {
+    const value = $('tool-output') ? $('tool-output').textContent : '';
+    if (!value) { toast('先生成一些内容吧。'); return; }
+    try {
+      if (!navigator.clipboard || !window.isSecureContext) throw new Error('fallback');
+      await navigator.clipboard.writeText(value);
+    } catch (_) {
+      const text = document.createElement('textarea'); text.value = value; text.style.position = 'fixed'; text.style.opacity = '0'; document.body.append(text); text.select();
+      const copied = document.execCommand('copy'); text.remove();
+      if (!copied) { toast('自动复制不可用，请选中结果后手动复制。'); return; }
+    }
+    toast('已复制。');
+  }
+
+  function startBreathing() {
+    stopBreathing(); const started = performance.now();
+    const animate = now => {
+      const elapsed = (now - started) / 1000;
+      const cycle = elapsed % 14;
+      const label = cycle < 4 ? '慢慢吸气' : cycle < 8 ? '轻轻停留' : '缓缓呼气';
+      const remaining = Math.ceil(cycle < 4 ? 4 - cycle : cycle < 8 ? 8 - cycle : 14 - cycle);
+      const scale = cycle < 4 ? 0.65 + cycle / 4 * 0.35 : cycle < 8 ? 1 : 1 - (cycle - 8) / 6 * 0.35;
+      if ($('breath-label')) $('breath-label').textContent = `${label} · ${remaining}`;
+      if ($('breath-orb')) $('breath-orb').style.transform = state.reducedMotion ? 'none' : `scale(${scale})`;
+      breathingFrame = requestAnimationFrame(animate);
+    };
+    breathingFrame = requestAnimationFrame(animate);
+  }
+  function stopBreathing() { if (breathingFrame) cancelAnimationFrame(breathingFrame); breathingFrame = null; }
+
+  function toggleFocus(force) {
+    const enabled = typeof force === 'boolean' ? force : !document.body.classList.contains('focus-mode');
+    document.body.classList.toggle('focus-mode', enabled);
+    if ($('focus-toggle')) { $('focus-toggle').classList.toggle('active', enabled); $('focus-toggle').setAttribute('aria-pressed', String(enabled)); $('focus-toggle').title = enabled ? '退出专注（Esc）' : '进入专注模式'; }
+    if (enabled) switchView('home');
+  }
+
+  function renderAll() {
+    renderName(); renderTimer(); renderTasks(); renderJournal(); renderStats(); updateEnvironment(); updateSoundUI();
+    if ($('sound-volume')) $('sound-volume').value = `${Math.round(state.volume * 100)}`;
+    if (window.IslandAudio) window.IslandAudio.setVolume(state.volume);
+    switchView(currentView); tick();
+  }
+
+  function bind() {
+    const on = (id, event, handler) => { if ($(id)) $(id).addEventListener(event, handler); };
+    on('timer-toggle', 'click', toggleTimer);
+    on('timer-reset', 'click', () => switchTimer(state.timer.mode, state.timer.duration / 60));
+    on('timer-work', 'click', () => switchTimer('work', state.duration));
+    on('timer-break', 'click', () => switchTimer('break', state.breakDuration));
+    $$('#timer-presets [data-minutes]').forEach(button => button.addEventListener('click', () => { const minutes = Number(button.dataset.minutes); if (minutes >= 5 && minutes <= 120) { state.duration = minutes; switchTimer('work', minutes); } }));
+    on('focus-toggle', 'click', () => toggleFocus());
+    on('task-form', 'submit', event => {
+      event.preventDefault(); const input = $('task-input'); if (!input) return; const text = input.value.trim();
+      if (!text) { input.focus(); return; }
+      if (state.tasks.length >= 5000) { toast('已经有很多待办了，先给完成的事情腾些空间吧。'); return; }
+      state.tasks.push({ id: uid(), text: text.slice(0, 240), done: false, createdAt: Date.now() }); input.value = ''; persist(); renderTasks(); input.focus();
+    });
+    on('journal-input', 'input', () => {
+      if (journalRemoteCopy) { preserveJournalVersion(journalRemoteCopy); journalRemoteCopy = null; }
+      const value = $('journal-input').value.slice(0, MAX_TEXT);
+      if ($('journal-input').value.length > MAX_TEXT) { $('journal-input').value = value; toast('这一天已写满 100000 字符，余下的文字可以留给明天。'); }
+      if (value) state.journals[journalDate] = value; else delete state.journals[journalDate];
+      if ($('journal-status')) $('journal-status').textContent = value.length >= MAX_TEXT - 1000 ? '正在保存… · 接近 100000 字符上限' : '正在保存…';
+      window.clearTimeout(journalSave); journalSave = window.setTimeout(flushJournal, 450);
+    });
+    on('journal-input', 'blur', () => { if (journalRemoteCopy && journalSave === null) renderJournal(); });
+    on('journal-date', 'change', () => selectJournal($('journal-date').value));
+    on('journal-prev', 'click', () => selectJournal(shiftedDate(journalDate, -1)));
+    on('journal-next', 'click', () => selectJournal(shiftedDate(journalDate, 1)));
+    on('journal-export', 'click', exportJournals);
+    $$('[data-view]').forEach(button => button.addEventListener('click', () => switchView(button.dataset.view)));
+    $$('[data-weather]').forEach(button => button.addEventListener('click', () => { if (['clear', 'rain', 'snow'].includes(button.dataset.weather)) { state.weather = button.dataset.weather; persist(); updateEnvironment(); } }));
+    on('time-toggle', 'click', () => { state.night = !state.night; persist(); updateEnvironment(); });
+    on('sound-toggle', 'click', () => { const panel = $('sound-panel'); if (!panel) return; panel.hidden = !panel.hidden; $('sound-toggle').setAttribute('aria-expanded', String(!panel.hidden)); });
+    $$('[data-sound]').forEach(button => button.addEventListener('click', () => { try { if (!window.IslandAudio) throw new Error('环境声音暂不可用。'); window.IslandAudio.toggle(button.dataset.sound); updateSoundUI(); } catch (error) { toast(error.message); } }));
+    on('sound-volume', 'input', () => { state.volume = clamp(Number($('sound-volume').value) / 100, 0, 1); if (window.IslandAudio) window.IslandAudio.setVolume(state.volume); persist(); });
+    on('settings-open', 'click', () => showDialog('settings-dialog'));
+    $$('[data-dialog]').forEach(button => button.addEventListener('click', () => showDialog(button.dataset.dialog)));
+    $$('[data-close]').forEach(button => button.addEventListener('click', () => closeDialog(button.closest('dialog'))));
+    $$('dialog').forEach(dialog => { dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeDialog(dialog); } }); dialog.addEventListener('close', () => { if (dialog.id === 'breathe-dialog') stopBreathing(); }); });
+    on('settings-form', 'submit', event => {
+      event.preventDefault(); const name = $('settings-name').value.trim(); const minutes = Number($('settings-duration').value);
+      if (!name || name.length > 18 || !Number.isFinite(minutes) || minutes < 5 || minutes > 120 || !Number.isInteger(minutes)) { toast('岛名请写 1–18 个字，专注时长请填 5–120 的整数。'); return; }
+      state.name = name; state.duration = minutes; state.reducedMotion = $('settings-motion') ? $('settings-motion').checked : false;
+      if (!state.timer.running && state.timer.mode === 'work' && state.timer.remaining === state.timer.duration) state.timer = { mode: 'work', duration: minutes * 60, remaining: minutes * 60, deadline: null, running: false };
+      persist(); renderName(); renderTimer(); updateEnvironment(); closeDialog($('settings-dialog')); toast('小岛已经记住了。');
+    });
+    on('data-export', 'click', backup);
+    on('data-import', 'click', () => { if ($('data-file')) $('data-file').click(); });
+    on('data-file', 'change', async () => { const input = $('data-file'); await importBackup(input.files[0]); input.value = ''; });
+    on('data-reset', 'click', () => {
+      if (!window.confirm('要清空这座岛的所有日记、待办和专注记录吗？此操作无法撤销。\n请先导出备份。')) return;
+      flushJournal(); state = defaults(); timerNotice = ''; journalDate = localDate(); storageLocked = false; if (window.IslandAudio) window.IslandAudio.stopAll(); persist(); renderAll(); closeDialog($('settings-dialog')); toast('潮水退去，一座新岛留了下来。');
+    });
+    on('tool-select', 'change', updateTool);
+    on('tool-primary', 'click', () => runTool(false));
+    on('tool-secondary', 'click', () => runTool(true));
+    on('copy-output', 'click', copyOutput);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        toggleFocus(false);
+        const openDialogs = $$('dialog[open]'); openDialogs.forEach(closeDialog);
+        if ($('sound-panel')) $('sound-panel').hidden = true;
+        if ($('sound-toggle')) $('sound-toggle').setAttribute('aria-expanded', 'false');
+      }
+      if (event.code === 'Space' && currentView === 'home' && !event.repeat && !event.altKey && !event.ctrlKey && !event.metaKey && !$$('dialog[open]').length && !event.target.closest('input,textarea,select,button,a,[contenteditable="true"]')) { event.preventDefault(); toggleTimer(); }
+    });
+    document.addEventListener('pointerdown', event => { const panel = $('sound-panel'); const toggle = $('sound-toggle'); if (panel && toggle && !panel.hidden && !panel.contains(event.target) && !toggle.contains(event.target)) { panel.hidden = true; toggle.setAttribute('aria-expanded', 'false'); } });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) flushJournal(); else { tick(); renderStats(); renderPreview(); renderName(); } });
+    window.addEventListener('beforeunload', () => { flushJournal(); });
+    window.addEventListener('pagehide', () => { flushJournal(); });
+    window.addEventListener('storage', onStorage);
+  }
+
+  function init() {
+    state = load();
+    if ($('journal-input')) $('journal-input').maxLength = MAX_TEXT;
+    if (window.IslandScene && typeof window.IslandScene.init === 'function') window.IslandScene.init($('island-canvas'));
+    bind(); renderAll(); updateTool();
+    window.setInterval(tick, 250);
+    window.IslandApp = { exportBackup: backup, showView: switchView, getSnapshot: () => JSON.parse(JSON.stringify(state)), storageKey: KEY };
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true }); else init();
+})();
+
+</script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-island" viewBox="0 0 40 40"><path d="m4 28 16-9 16 9-16 9Z"/><path d="M20 5v19m-7-7 7-12 7 12Zm-4 7 11-15 11 15Z"/><path d="m5 32 15 6 15-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16M8 4v6m8 4v6"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4Zm12-1a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2 8M4 4v6h6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-rain" viewBox="0 0 24 24"><path d="M6 15a5 5 0 1 1 1-10 6 6 0 0 1 11 3 4 4 0 0 1 0 8M7 18l-1 3m6-4-1 3m6-2-1 3"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 4l3 3 3-3M9 20l3-3 3 3M4 10l4-1-1-4m10 14-1-4 4-1M4 14l4 1-1 4m10-14-1 4 4 1"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20C2 9 10 3 21 3c0 11-6 19-16 17Zm0 0L17 7"/></symbol>
+    <symbol id="i-write" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l5-1L21 7a2.8 2.8 0 0 0-4-4L5 15Zm0 0 1-5 4 4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+  </svg>
+  <div class="page-grain" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <a class="brand" href="#" data-view="home" aria-label="未名岛首页">
+      <span class="brand-mark"><svg><use href="#i-island"/></svg></span>
+      <span id="island-name">未名岛</span><span class="brand-en">AN ISLAND OF YOUR OWN</span>
+    </a>
+    <nav class="main-nav" aria-label="主要导航">
+      <button class="nav-link active" data-view="home" aria-current="page">岛上</button>
+      <button class="nav-link" data-view="journal">手记</button>
+      <button class="nav-link" data-view="tools">工具箱</button>
+    </nav>
+    <div class="header-right"><span class="local-badge"><span></span> 只在此地</span><button class="icon-button" id="settings-open" aria-label="岛屿设置" title="岛屿设置"><svg><use href="#i-settings"/></svg></button></div>
+  </header>
+
+  <main id="main">
+    <section id="view-home" class="view home-view" aria-label="岛上">
+      <div class="day-line"><span id="current-date">今天</span><span class="line-stretch"></span><span id="greeting">慢一点，也没关系。</span></div>
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-line"></span>A LITTLE TIME, ALL YOURS</p>
+          <h1>世界很大。<br>先照顾<span class="ink-accent">这一小块。</span></h1>
+          <p class="hero-description">让心安静下来，做一件你在意的小事。</p>
+          <div class="timer" aria-label="专注计时器">
+            <div class="timer-tabs" role="group" aria-label="计时模式"><button id="timer-work" class="active" aria-pressed="true">专注一会儿</button><span>/</span><button id="timer-break" aria-pressed="false">歇一会儿</button></div>
+            <div class="timer-digits" id="timer-display" role="timer" aria-label="剩余时间">25:00</div>
+            <div class="timer-meta"><span id="timer-label">把这段时间，留给一件事</span><div id="timer-presets" class="presets" role="group" aria-label="专注时长"><button class="active" data-minutes="25" aria-label="25 分钟">25</button><button data-minutes="45" aria-label="45 分钟">45</button><button data-minutes="60" aria-label="60 分钟">60<span> 分</span></button></div></div>
+            <div class="timer-actions"><button class="primary-button" id="timer-toggle">开始专注<svg><use href="#i-arrow"/></svg></button><button class="icon-button reset-button" id="timer-reset" aria-label="重置计时器" title="重新开始"><svg><use href="#i-reset"/></svg></button><button class="text-button focus-button" id="focus-toggle" aria-pressed="false"><svg><use href="#i-expand"/></svg>沉浸</button></div>
+            <p class="timer-notice" id="timer-notice">每完成一次专注，岛上就多一份生机。</p>
+          </div>
+        </div>
+
+        <figure class="scene" id="island-scene">
+          <div class="scene-topline"><span><i></i>ISLAND No. 001</span><button id="time-toggle" class="scene-time" title="切换到黎明" aria-label="切换到黎明">夜色正好<svg><use href="#i-sun"/></svg></button></div>
+          <div class="scene-coordinate coordinate-a" aria-hidden="true">＋</div><div class="scene-coordinate coordinate-b" aria-hidden="true">＋</div>
+          <canvas id="island-canvas" role="img" aria-label="一座悬浮在星空里的森林小岛，温暖的小屋亮着灯。可以切换天气，专注完成后小岛会逐渐生长。"></canvas>
+          <figcaption class="scene-caption"><span class="caption-rule"></span>不必去很远，也能有自己的岛。</figcaption>
+          <div class="scene-bottomline"><div id="weather-controls" class="weather-controls" role="group" aria-label="岛上天气"><button class="active" data-weather="clear" aria-pressed="true"><svg><use href="#i-sun"/></svg>晴夜</button><button data-weather="rain" aria-pressed="false"><svg><use href="#i-rain"/></svg>听雨</button><button data-weather="snow" aria-pressed="false"><svg><use href="#i-snow"/></svg>看雪</button></div><button class="sound-toggle" id="sound-toggle" aria-expanded="false" aria-controls="sound-panel"><svg><use href="#i-sound"/></svg><span>岛上的声音</span></button></div>
+          <div id="sound-panel" class="sound-panel" hidden><div class="sound-title">给安静一点声音<span>合成环境音 · 无需联网</span></div><div class="sound-options"><button data-sound="rain" aria-pressed="false">雨落林间</button><button data-sound="fire" aria-pressed="false">炉火微响</button><button data-sound="wind" aria-pressed="false">风过山谷</button></div><label class="volume-label" for="sound-volume">音量<input id="sound-volume" type="range" min="0" max="100" value="35" aria-label="环境音音量"></label></div>
+        </figure>
+      </div>
+
+      <div class="daily-grid">
+        <section class="daily-card task-card" aria-labelledby="task-heading"><div class="card-heading"><h2 id="task-heading"><span class="card-index">01</span>眼前的小事</h2><span class="count-pill" id="task-count">0 件</span></div><div class="tasks-body"><p id="task-empty" class="empty-note">不用装满一天。<br><span>先写下最想完成的那一件。</span></p><ul id="task-list" aria-label="待办事项"></ul></div><form id="task-form" class="task-form"><span aria-hidden="true">＋</span><input id="task-input" maxlength="160" placeholder="下一件小事……" aria-label="添加待办事项" autocomplete="off"><button type="submit" aria-label="添加事项" title="添加事项"><svg><use href="#i-arrow"/></svg></button></form></section>
+        <section class="daily-card note-card" aria-labelledby="note-heading"><div class="card-heading"><h2 id="note-heading"><span class="card-index">02</span>留一句给今天</h2><svg class="muted-icon"><use href="#i-write"/></svg></div><button id="journal-preview" class="journal-preview" data-view="journal">有什么念头，先放在这里。<br>不用写得很好，写下来就好。</button><button class="card-link" data-view="journal">翻开手记<svg><use href="#i-arrow"/></svg></button><span class="note-decoration" aria-hidden="true">“</span></section>
+        <section class="daily-card stats-card" aria-labelledby="stats-heading"><div class="card-heading"><h2 id="stats-heading"><span class="card-index">03</span>时间留下的痕迹</h2><svg class="muted-icon"><use href="#i-leaf"/></svg></div><div class="stat-main"><span id="stat-minutes">0</span><span class="stat-unit">分钟<span>今天的专注</span></span></div><div class="week-chart" id="week-chart" role="img" aria-label="最近七天的专注时长"></div><div class="stats-bottom"><span>累计 <b id="stat-sessions">0</b> 次专注</span><span>连续 <b id="stat-streak">0</b> 天</span></div></section>
+      </div>
+      <div class="focus-exit-hint">空格 暂停 / 继续<span>·</span>Esc 回到岛上</div>
+    </section>
+
+    <section id="view-journal" class="view journal-view" hidden aria-label="手记">
+      <div class="section-intro"><div><p class="eyebrow">NOT EVERYTHING NEEDS A TITLE</p><h1>写下来，<span class="ink-accent">就有了回声。</span></h1><p>乱七八糟也好，只言片语也好。这里都放得下。</p></div><button id="journal-export" class="outline-button"><svg><use href="#i-download"/></svg>导出手记</button></div>
+      <div class="journal-layout"><div class="journal-paper"><div class="paper-heading"><div class="journal-day-switch"><button id="journal-prev" class="icon-button" aria-label="前一天">←</button><label for="journal-date" class="sr-only">手记日期</label><input id="journal-date" type="date"><button id="journal-next" class="icon-button" aria-label="后一天">→</button></div><span id="journal-status" role="status">落笔即保存</span></div><label for="journal-input" class="sr-only">今天的手记</label><textarea id="journal-input" placeholder="今天，有什么想留住的？&#10;&#10;可以是一件小事，一段没想明白的话，&#10;或者只是一句：今天也过完了。" spellcheck="false"></textarea><div class="paper-bottom"><span>只存在你的浏览器里</span><svg><use href="#i-leaf"/></svg></div></div><aside class="journal-aside"><span class="aside-mark">一页一日</span><h2>很小的日子，<br>也值得被记得。</h2><p>不必每天都有收获。<br>有时，记录本身就是收获。</p><div class="journal-activity"><p class="mini-label">近 35 天 · 专注的足迹</p><div id="heatmap" class="heatmap" role="img" aria-label="近 35 天的专注记录"></div><p class="heatmap-legend"><span>少</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><span>多</span></p></div><button class="text-button" id="breathe-open" data-dialog="breathe-dialog">有点累？一起呼吸一分钟 <span>↗</span></button></aside></div>
+    </section>
+
+    <section id="view-tools" class="view tools-view" hidden aria-label="工具箱">
+      <div class="section-intro"><div><p class="eyebrow">SMALL TOOLS, LESS FRICTION</p><h1>顺手的工具。<br><span class="ink-accent">省一点折腾。</span></h1><p>处理几个小问题，然后继续做你的事。</p></div><span class="tools-offline"><span></span>全部在本机处理</span></div>
+      <div class="tools-workbench"><div class="tools-toolbar"><label for="tool-select">我想处理</label><select id="tool-select"><option value="text">文字统计</option><option value="json">JSON 整理</option><option value="base64">Base64 编解码</option><option value="url">URL 编解码</option><option value="choose">帮我选一个</option></select><span id="tool-hint">粘贴文字，看看字数与阅读时间。</span></div><div class="tools-editors"><div class="tool-input-wrap"><label for="tool-input"><span>INPUT</span>放在这里</label><textarea id="tool-input" spellcheck="false" placeholder="粘贴或输入内容……" aria-label="工具输入"></textarea></div><div class="tool-output-wrap"><div class="output-label"><label for="tool-output"><span>OUTPUT</span>处理结果</label><button id="copy-output" class="text-button">复制结果</button></div><pre id="tool-output" tabindex="0" aria-label="工具输出" aria-live="polite">等你放点东西进来。</pre></div></div><div class="tools-actions"><p>不上传，不调用接口。</p><button class="outline-button" id="tool-secondary">清空</button><button class="primary-button" id="tool-primary">统计文字 <span>↗</span></button></div></div>
+      <p class="tools-footnote">一个普通的新建文件夹，也可以有一点自己的用处。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>未名岛 <span class="footer-dot">·</span> 一小块属于你的时间</span><div><span id="storage-status"><i></i>本地保存</span><button id="about-open" data-dialog="about-dialog">关于这座岛 <span>↗</span></button></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <dialog id="settings-dialog" class="island-dialog"><div class="dialog-top"><p class="eyebrow">MAKE YOURSELF AT HOME</p><button class="icon-button" data-close aria-label="关闭设置"><svg><use href="#i-close"/></svg></button></div><h2>这是你的岛。</h2><p class="dialog-description">改个名字，调好步调。然后慢慢来。</p><form id="settings-form"><label class="field-label" for="settings-name">岛屿名字</label><input id="settings-name" class="field" maxlength="16" placeholder="未名岛" required><label class="field-label" for="settings-duration">每次专注的时间 <span>5 — 120 分钟</span></label><input id="settings-duration" class="field" type="number" min="5" max="120" step="1" required value="25"><label class="checkbox-field"><input id="settings-motion" type="checkbox"><span>减少动态效果</span></label><button class="primary-button full-width" id="settings-save" type="submit">就这样，挺好 <svg><use href="#i-arrow"/></svg></button></form><div class="backup-area"><h3>把这些日常，好好收起来。</h3><p>数据跟随当前浏览器。换浏览器、移动入口文件或清理数据前，记得先导出备份。</p><div class="backup-actions"><button id="data-export" class="outline-button">导出备份</button><button id="data-import" class="outline-button">恢复备份</button><input id="data-file" type="file" accept="application/json,.json" hidden></div><button id="data-reset" class="danger-link">清空岛上的记录</button></div></dialog>
+
+  <dialog id="about-dialog" class="island-dialog about-dialog"><div class="dialog-top"><p class="eyebrow">A FOLDER, WITH A LITTLE LIFE IN IT</p><button class="icon-button" data-close aria-label="关闭关于"><svg><use href="#i-close"/></svg></button></div><svg class="about-logo"><use href="#i-island"/></svg><h2>名字还没想好，<br>日子可以先过起来。</h2><p>这个文件夹原本叫“新建文件夹”。<br>现在，它有了一座岛，一盏灯，<br>和几个能帮上小忙的东西。</p><p>不需要账号，也不需要网络。<br>你写下的字、勾掉的小事、认真度过的时间，<br>都留在你自己的浏览器里。</p><p class="about-note">愿你每次打开它，都能找回一点自己的节奏。</p><div class="about-version">未名岛 / v1.0 <span>2026.10.17</span></div></dialog>
+
+  <dialog id="breathe-dialog" class="island-dialog breathe-dialog"><div class="dialog-top"><p class="eyebrow">JUST ONE QUIET MINUTE</p><button class="icon-button" data-close aria-label="结束呼吸练习"><svg><use href="#i-close"/></svg></button></div><h2>先放下手里的事。</h2><p class="dialog-description">跟着光圈，慢慢呼吸。不必刻意用力。</p><div id="breath-orb" class="breath-orb"><span id="breath-label">吸气</span></div><p class="breath-guide">吸气 4 秒 · 停留 4 秒 · 呼气 6 秒</p></dialog>
+  <dialog id="recovery-dialog" class="island-dialog"><div class="dialog-top"><p class="eyebrow">SOME THINGS ARE STILL HERE</p><button class="icon-button" data-close aria-label="关闭版本恢复"><svg><use href="#i-close"/></svg></button></div><h2>还有一些旧日常。</h2><p class="dialog-description">导入之前、手记出现不同版本时，岛会尽量留住一份。可以先导出看看，再决定是否恢复。</p><div id="recovery-list" class="recovery-list"></div></dialog>
+  <noscript><div class="noscript-note">这座岛需要浏览器启用 JavaScript。请在 Edge、Chrome 或 Tabbit 中打开这个文件。</div></noscript>
+</body>
+</html>
